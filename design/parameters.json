@@ -1,0 +1,109 @@
+{
+  "project": "Rack4Modules",
+  "revision": "0.2.0",
+  "units": "mm",
+  "eurorack": {
+    "rows": 3,
+    "hp_per_row": 104,
+    "hp_pitch": 5.08,
+    "nominal_row_width": 528.32,
+    "panel_height": 128.5,
+    "row_pitch": 133.35,
+    "mounting_hole_vertical_spacing": 122.5,
+    "panel_thickness": 2.0,
+    "module_screw": "M3 x 6 or M3 x 8"
+  },
+  "enclosure": {
+    "outer_width": 548.0,
+    "outer_height": 420.0,
+    "body_depth": 110.0,
+    "front_grid_width": 528.32,
+    "front_grid_height": 400.05,
+    "body_thickness": 2.0,
+    "side_frame_thickness": 3.0,
+    "lid_thickness": 1.5,
+    "lid_inner_clearance": 70.0,
+    "lid_overlap": 12.0,
+    "normal_module_depth": 85.0,
+    "local_module_depth_min": 60.0,
+    "empty_mass_target_kg": 5.0,
+    "material_body": "5052-H32 aluminium",
+    "material_side_frames": "6061-T6 aluminium"
+  },
+  "rail": {
+    "count": 6,
+    "length": 528.32,
+    "profile_height": 10.0,
+    "profile_depth": 12.0,
+    "thread_strip_width": 6.0,
+    "thread_strip_thickness": 2.0,
+    "thread_hole_pitch": 5.08,
+    "thread_hole_count": 104,
+    "thread_hole_minor_diameter": 2.5,
+    "thread_size": "M3"
+  },
+  "vesa": {
+    "pattern": "VESA MIS-D 100",
+    "pitch_x": 100.0,
+    "pitch_y": 100.0,
+    "fastener": "M4",
+    "hole_diameter": 4.5,
+    "clear_zone_width": 140.0,
+    "clear_zone_height": 140.0,
+    "reinforcement_width": 160.0,
+    "reinforcement_height": 160.0,
+    "reinforcement_thickness": 3.0,
+    "design_working_load_kg": 15.0,
+    "static_proof_load_kg": 30.0
+  },
+  "rear_io": {
+    "audio_plate_width": 160.0,
+    "audio_plate_height": 80.0,
+    "audio_trs_635_count": 8,
+    "audio_trs_635_hole_diameter": 11.2,
+    "audio_trs_635_pitch_x": 28.0,
+    "audio_trs_635_pitch_y": 26.0,
+    "digital_plate_width": 160.0,
+    "digital_plate_height": 105.0,
+    "midi_din5_count": 3,
+    "midi_din5_hole_diameter": 15.0,
+    "midi_din5_ear_pitch": 22.2,
+    "usb_neutrik_d_count": 2,
+    "usb_neutrik_d_hole_diameter": 24.0,
+    "aux_trs_35_count": 2,
+    "aux_trs_35_hole_diameter": 6.2,
+    "power_blank_plate_width": 90.0,
+    "power_blank_plate_height": 55.0,
+    "cassette_mount_screw": "M3"
+  },
+  "thermal": {
+    "replaceable_vent_panel_width": 160.0,
+    "replaceable_vent_panel_height": 30.0,
+    "slot_length": 22.0,
+    "slot_width": 4.0,
+    "slot_count": 8,
+    "cooling": "fanless optional passive convection"
+  },
+  "transport": {
+    "lid_latch_count": 4,
+    "handle_mount_pitch": 180.0,
+    "handle_grip_width": 150.0,
+    "leg_count": 2,
+    "leg_angles_deg": [15, 30],
+    "rubber_foot_count": 8
+  },
+  "power_keepouts": [
+    {
+      "name": "distributed_power_bus",
+      "width": 500.0,
+      "height": 85.0,
+      "depth": 20.0
+    },
+    {
+      "name": "central_power_supply",
+      "width": 210.0,
+      "height": 90.0,
+      "depth": 45.0
+    }
+  ]
+}

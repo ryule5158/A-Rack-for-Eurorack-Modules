@@ -1,0 +1,11 @@
+~$*
+*.sldprt.bak
+*.sldasm.bak
+*.slddrw.bak
+*.swp
+*.tmp
+*.log
+Thumbs.db
+Desktop.ini
+artifacts/preview/*.png
+tools/build/
