@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 579 423" fill="none">
+  <!-- Low-contrast production intent. Supplier must convert the visual target
+       into a qualified laser/anodize/powder process coupon before release. -->
+  <g stroke="#D8D8D8" stroke-width="0.8" stroke-linecap="round" opacity="0.28">
+    <path d="M165 90H285 M330 90H515"/>
+    <path d="M145 105H250 M285 105H465"/>
+    <path d="M175 120H360 M400 120H535"/>
+
+    <path d="M55 205H230 M260 205H430 M455 205H535"/>
+    <path d="M80 220H300 M335 220H510"/>
+    <path d="M50 235H190 M225 235H370 M400 235H530"/>
+
+    <path d="M70 315H210 M250 315H425 M465 315H520"/>
+    <path d="M90 330H270 M305 330H535"/>
+    <path d="M50 345H180 M220 345H350 M385 345H510"/>
+  </g>
+</svg>

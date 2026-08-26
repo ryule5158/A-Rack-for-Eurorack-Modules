@@ -1,0 +1,10 @@
+﻿Rymovia Audio Systems / Rack4Modules / V0.8 appearance derivative
+Geometry source: V0.7 frozen; no structural feature edits
+Primary finish: graphite matte #111111 equivalent
+Rails and wear interfaces: natural aluminium / stainless
+Functional accent: #FF3B30 lock indicator only
+Outer lid decal: mark-only; inner lid decal: full lockup
+Mark asset: C:\Users\LENOVO\Desktop\Rack4Modules\logo\logo-mark-white.png
+Lockup asset: C:\Users\LENOVO\Desktop\Rack4Modules\logo\logo-lockup-white.png
+Branded lid: C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\DeepTravelLid_V08_Rymovia_StandRelief.SLDPRT
+Production boundary: vector logo master and physical DFM/finish validation remain required

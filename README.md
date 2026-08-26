@@ -1,31 +1,44 @@
 # Rack4Modules：3×104HP 原创 Eurorack 机箱
 
-本项目当前设计入口为 **V0.7 商业化薄壁减重 / 稳定双剪版**。它保持 3 排 3U、每排
-104HP、没有 1U 行，以及 `542 mm` 模块安装内净宽；本轮在不削弱已冻结的脚架、导轨端部、
-提手和 VESA 主要载荷路径的前提下，把大面积非关键实体改为连续薄壁壳、局部加强区和轻量盖。
+本项目当前设计入口为 **V0.9 Rymovia 外观 / 四点锁盖版**。它保持 3 排 3U、每排
+104HP、没有 1U 行，以及 `542 mm` 模块安装内净宽；在 V0.7 薄壁承力基线之上加入
+Rymovia Time Grid 外盖图案、真实钻孔深盖、四点过中心锁扣安装结构、硬止挡与 EPDM 预压。
 
-第一次打开项目，请先看 [V0.7 零基础打开与检查说明](START_HERE_V07.md)。结构与减重依据、
-保留的承力路径及实物验证边界见 `docs/strength-weight-audit-v07.md`；最终软件检查以
-`reports/layout-v07-validation.md` 为准。2026-08-26 最终结果为 **773 PASS / 14 WARNING / 0 FAIL**。
+第一次打开项目，请先看 [V0.9 零基础打开与检查说明](START_HERE_V09.md)。V0.7 的结构与
+减重验证仍见 `docs/strength-weight-audit-v07.md` 和 `reports/layout-v07-validation.md`；
+V0.9 当前有成功生成记录，但尚未把实体样机试验或最终供应商锁扣 STEP 复核当作已完成。
 
 ## 当前总装入口
 
 | 用途 | SOLIDWORKS 总装 |
 | --- | --- |
-| 最终展示：60°工作姿态，盖子单独放在旁边 | `cad/assemblies/Rack4Modules_ShowcaseTilt60_LidOff_V07.SLDASM` |
-| 正常开箱、主要编辑入口 | `cad/assemblies/Rack4Modules_OpenCase_V07.SLDASM` |
-| 合盖运输状态 | `cad/assemblies/Rack4Modules_TransportClosed_V07.SLDASM` |
-| 模块安装与内部避让检查 | `cad/assemblies/Rack4Modules_ClearanceCheck_V07.SLDASM` |
-| 正式桌面支撑姿态，模块面相对桌面约 60° | `cad/assemblies/Rack4Modules_DesktopTilt60_V07.SLDASM` |
+| 最终展示：60°工作姿态，盖子单独放在旁边 | `cad/assemblies/Rack4Modules_ShowcaseTilt60_LidOff_V09_RymoviaSecureLid.SLDASM` |
+| 正常开箱、主要编辑入口 | `cad/assemblies/Rack4Modules_OpenCase_V09_RymoviaSecureLid.SLDASM` |
+| 合盖运输状态 | `cad/assemblies/Rack4Modules_TransportClosed_V09_RymoviaSecureLid.SLDASM` |
+| 模块安装与内部避让检查 | `cad/assemblies/Rack4Modules_ClearanceCheck_V09_RymoviaSecureLid.SLDASM` |
+| 正式桌面支撑姿态，模块面相对桌面约 60° | `cad/assemblies/Rack4Modules_DesktopTilt60_V09_RymoviaSecureLid.SLDASM` |
 
-建议只想看成品时打开 `Rack4Modules_ShowcaseTilt60_LidOff_V07.SLDASM`。该展示总装故意把
+建议只想看成品时打开 `Rack4Modules_ShowcaseTilt60_LidOff_V09_RymoviaSecureLid.SLDASM`。该展示总装故意把
 深盖移到机箱旁边，既能看见盖子，也不会遮挡三排模块安装区域；盖子是否适合运输仍应在
 `TransportClosed` 总装及实体样机中检查。
 
 请保留整个 `Rack4Modules` 文件夹；`.SLDASM` 依赖 `cad/parts` 中的原生零件，不能只复制
 一个总装文件。
 
-## V0.7 方案摘要
+## V0.9 外观与锁盖摘要
+
+- 外盖采用 22 段、三组节奏带构成的 **Rymovia Time Grid**，对应三排 3U；不使用霓虹、
+  假 PCB 或重复满版 logo。评审 SVG 位于 `logo/rymovia-timegrid-v09.svg`，量产低反差意图稿
+  位于 `logo/rymovia-timegrid-v09-production-lowcontrast.svg`。
+- 左右侧各设置两个锁点，共四点；盖侧真实开 M3 孔，并加入 5052 加强板、箱侧 6061 桥板、
+  不锈钢扣座及贯穿紧固件模型。
+- 下锁点与脚架外颊板保留 `3 mm` 名义间隙，锁扣结构与最低散热孔保留 `58 mm` 名义间隙。
+- EPDM 名义压缩 `0.8 mm / 28.6%`，闭合位置由独立金属硬止挡控制。
+- 当前 CAD 质量为开箱 `5.267439 kg`、合盖 `6.737140 kg`，均不含未来电源与模块，也不是
+  实物称重。
+- 最终锁扣供应商 STEP、折弯/表面处理公差、预紧、循环、振动、跌落和满载提拉仍须样机验证。
+
+## V0.7 结构基线摘要
 
 - Eurorack 格式保持为 **3 × 104HP、无 1U**，模块安装内净宽保持 `542 mm`。
 - 六根模块导轨由全实体截面调整为闭口薄壁主体，并在两端保留实体连接块；模块螺纹条仍为
