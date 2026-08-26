@@ -1,0 +1,837 @@
+# Rack4Modules V0.7 商用品级承力与减重验证
+
+生成时间：2026-08-26 16:30:12
+项目根目录：C:\Users\LENOVO\Desktop\Rack4Modules
+
+本程序只读检查原生 SLDPRT/SLDASM 和临时 STEP 副本；不会保存或替换 CAD 文件。
+
+## 文件系统清单
+
+- PASS: 原生零件目录存在 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts
+- PASS: 原生装配目录存在 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\assemblies
+- PASS: STEP 导出目录存在 -- C:\Users\LENOVO\Desktop\Rack4Modules\exports
+- PASS: V0.7 原生零件存在：SideFrame_V07_StableDoubleShearInner -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\SideFrame_V07_StableDoubleShearInner.SLDPRT
+- PASS: V0.7 原生零件存在：SideKickstand_V07_185mm_8x28 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\SideKickstand_V07_185mm_8x28.SLDPRT
+- PASS: V0.7 原生零件存在：KickstandOuterCheek_V07_4mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandOuterCheek_V07_4mm.SLDPRT
+- PASS: V0.7 原生零件存在：KickstandPivotPin_V07_10mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandPivotPin_V07_10mm.SLDPRT
+- PASS: V0.7 原生零件存在：KickstandSpacer_V07_8p8mm_M5 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandSpacer_V07_8p8mm_M5.SLDPRT
+- PASS: V0.7 原生零件存在：KickstandLoadStopPin_V07_10mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandLoadStopPin_V07_10mm.SLDPRT
+- PASS: V0.7 原生零件存在：KickstandCaptiveIndexPin_V07_8mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandCaptiveIndexPin_V07_8mm.SLDPRT
+- PASS: V0.7 原生零件存在：KickstandHeelInsert_V07 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandHeelInsert_V07.SLDPRT
+- PASS: V0.7 原生零件存在：KickstandFootPad_V07_Rubber -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandFootPad_V07_Rubber.SLDPRT
+- PASS: V0.7 原生零件存在：DeepTravelLid_V07_StandRelief -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\DeepTravelLid_V07_StandRelief.SLDPRT
+- PASS: V0.7 原生零件存在：CarryHandleSpreader_V07_6061_4mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\CarryHandleSpreader_V07_6061_4mm.SLDPRT
+- PASS: V0.7 原生零件存在：Rail_104HP_V07_ClosedTube_EndBoss -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\Rail_104HP_V07_ClosedTube_EndBoss.SLDPRT
+- PASS: V0.7 原生零件存在：BackPanel_V07_5052_1p5mm_VESADoubler -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\BackPanel_V07_5052_1p5mm_VESADoubler.SLDPRT
+- PASS: V0.7 原生装配存在：Rack4Modules_OpenCase_V07 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\assemblies\Rack4Modules_OpenCase_V07.SLDASM
+- PASS: V0.7 STEP 存在：Rack4Modules_OpenCase_V07 -- C:\Users\LENOVO\Desktop\Rack4Modules\exports\Rack4Modules_OpenCase_V07.STEP
+- PASS: V0.7 原生装配存在：Rack4Modules_TransportClosed_V07 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\assemblies\Rack4Modules_TransportClosed_V07.SLDASM
+- PASS: V0.7 STEP 存在：Rack4Modules_TransportClosed_V07 -- C:\Users\LENOVO\Desktop\Rack4Modules\exports\Rack4Modules_TransportClosed_V07.STEP
+- PASS: V0.7 原生装配存在：Rack4Modules_ClearanceCheck_V07 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\assemblies\Rack4Modules_ClearanceCheck_V07.SLDASM
+- PASS: V0.7 STEP 存在：Rack4Modules_ClearanceCheck_V07 -- C:\Users\LENOVO\Desktop\Rack4Modules\exports\Rack4Modules_ClearanceCheck_V07.STEP
+- PASS: V0.7 原生装配存在：Rack4Modules_DesktopTilt60_V07 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\assemblies\Rack4Modules_DesktopTilt60_V07.SLDASM
+- PASS: V0.7 STEP 存在：Rack4Modules_DesktopTilt60_V07 -- C:\Users\LENOVO\Desktop\Rack4Modules\exports\Rack4Modules_DesktopTilt60_V07.STEP
+- PASS: V0.7 原生装配存在：Rack4Modules_ShowcaseTilt60_LidOff_V07 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\assemblies\Rack4Modules_ShowcaseTilt60_LidOff_V07.SLDASM
+- PASS: V0.7 STEP 存在：Rack4Modules_ShowcaseTilt60_LidOff_V07 -- C:\Users\LENOVO\Desktop\Rack4Modules\exports\Rack4Modules_ShowcaseTilt60_LidOff_V07.STEP
+
+## SOLIDWORKS 会话
+
+- PASS: 连接到已运行的 SOLIDWORKS -- 33.1.2
+
+## V0.7 稳定双剪与商业化薄壁减重零件几何、实体、材料和 CAD 质量
+
+- PASS: V0.7 零件可只读打开并含实体：Rail_104HP_V07_ClosedTube_EndBoss -- 1 个实体；542 x 10 x 20 mm；CAD 质量=0.195 kg
+- PASS: V0.7 零件可只读打开并含实体：BackPanel_V07_5052_1p5mm_VESADoubler -- 1 个实体；548 x 420 x 2 mm；CAD 质量=0.959 kg
+- PASS: V0.7 零件可只读打开并含实体：SideFrame_V07_StableDoubleShearInner -- 1 个实体；4 x 420 x 108 mm；CAD 质量=0.426 kg
+- PASS: V0.7 零件可只读打开并含实体：SideKickstand_V07_185mm_8x28 -- 1 个实体；8 x 214 x 77.633 mm；CAD 质量=0.14 kg
+- PASS: V0.7 零件可只读打开并含实体：KickstandOuterCheek_V07_4mm -- 1 个实体；4 x 256 x 90 mm；CAD 质量=0.187 kg
+- PASS: V0.7 零件可只读打开并含实体：KickstandPivotPin_V07_10mm -- 1 个实体；16.8 x 10 x 10 mm；CAD 质量=0.011 kg
+- PASS: V0.7 零件可只读打开并含实体：KickstandSpacer_V07_8p8mm_M5 -- 1 个实体；8.8 x 12 x 12 mm；CAD 质量=0.002 kg
+- PASS: V0.7 零件可只读打开并含实体：KickstandLoadStopPin_V07_10mm -- 1 个实体；16.8 x 10 x 10 mm；CAD 质量=0.011 kg
+- PASS: V0.7 零件可只读打开并含实体：KickstandCaptiveIndexPin_V07_8mm -- 1 个实体；12 x 8 x 8 mm；CAD 质量=0.005 kg
+- PASS: V0.7 零件可只读打开并含实体：KickstandHeelInsert_V07 -- 1 个实体；8 x 8 x 24 mm；CAD 质量=0.012 kg
+- PASS: V0.7 零件可只读打开并含实体：KickstandFootPad_V07_Rubber -- 1 个实体；8.4 x 26 x 26 mm；CAD 质量=0.005 kg
+- PASS: V0.7 零件可只读打开并含实体：DeepTravelLid_V07_StandRelief -- 5 个实体；579 x 423.4 x 84.4 mm；CAD 质量=1.321 kg
+- PASS: V0.7 零件可只读打开并含实体：CarryHandleSpreader_V07_6061_4mm -- 1 个实体；128 x 4 x 30 mm；CAD 质量=0.041 kg
+- PASS: 闭口薄壁结构导轨总体包络与单实体连续性 -- 实际 542 x 10 x 20 mm；目标 542 x 10 x 20 mm，1 个连续实体
+- PASS: 导轨端部保留 Ø3.3 M4 实心端座导孔 -- 两端 25 mm 保留实心；侧向轴线 y=0,z=16 mm
+- PASS: 闭口薄壁导轨材料标记 -- 6061-T6 (SS)
+- PASS: 单根闭口薄壁导轨 CAD 质量预算 -- 0.195 kg；上限 0.205 kg；不含独立不锈钢螺纹条
+- PASS: 1.5 mm 后壳与局部 2.0 mm VESA 叠层包络 -- 实际 548 x 420 x 2 mm；整体皮 1.5 mm，中心 160 x 160 mm 局部总厚 2.0 mm
+- PASS: 轻量后壳 VESA 100 Ø4.5 孔 -50,-50 -- 四孔均贯穿局部 2.0 mm 叠层
+- PASS: 轻量后壳 VESA 100 Ø4.5 孔 -50,50 -- 四孔均贯穿局部 2.0 mm 叠层
+- PASS: 轻量后壳 VESA 100 Ø4.5 孔 50,-50 -- 四孔均贯穿局部 2.0 mm 叠层
+- PASS: 轻量后壳 VESA 100 Ø4.5 孔 50,50 -- 四孔均贯穿局部 2.0 mm 叠层
+- PASS: 轻量后壳材料标记 -- 5052-H32
+- PASS: 轻量后壳 CAD 质量预算 -- 0.959 kg；上限 1 kg
+- PASS: 内侧框厚度 -- 预期 4.0 mm，实际 4 mm
+- PASS: 内侧框主体包络 -- 实际 4 x 420 x 108 mm；目标 4 x 420 x 108 mm
+- PASS: 内侧框 Ø10.2 主轴净孔 -- 轴线 y=-129, z=52 mm；Ø10 轴销结构净孔
+- PASS: 内侧框 Ø10.2 承力止挡净孔 -- 部署轴线 y=-91.852, z=29.526 mm；Ø10 止挡销净孔
+- PASS: 内侧框不被固定锁孔削弱 -- Ø8 固定索引销仅从外颊侧进入腿，不贯穿模块侧内框
+- PASS: 侧框通风槽端圆 94,92 -- 22 x 4 mm R2 槽；位于脚架结构区前上方
+- PASS: 侧框通风槽端圆 124,92 -- 22 x 4 mm R2 槽；位于脚架结构区前上方
+- PASS: 侧框通风槽端圆 154,92 -- 22 x 4 mm R2 槽；位于脚架结构区前上方
+- PASS: 侧框通风槽端圆 184,92 -- 22 x 4 mm R2 槽；位于脚架结构区前上方
+- PASS: 侧框通风槽端圆 94,102 -- 22 x 4 mm R2 槽；位于脚架结构区前上方
+- PASS: 侧框通风槽端圆 124,102 -- 22 x 4 mm R2 槽；位于脚架结构区前上方
+- PASS: 侧框通风槽端圆 154,102 -- 22 x 4 mm R2 槽；位于脚架结构区前上方
+- PASS: 侧框通风槽端圆 184,102 -- 22 x 4 mm R2 槽；位于脚架结构区前上方
+- PASS: 内侧框材料标记 -- 6061-T6 (SS)
+- PASS: 单块内侧框低应力场减重预算 -- 0.426 kg；上限 0.44 kg；轴、止挡、导轨、隔柱和边缘仍为 4 mm
+- PASS: 折叠腿厚度 -- 预期 8.0 mm 7075-T6，实际 8 mm
+- PASS: 折叠腿 Ø10.2 主轴净孔 -- 局部轴线 y=-75, z=6 mm；Ø10 轴销结构净孔
+- PASS: 折叠腿 Ø8.2 部署锁孔 -- 相对主轴 q=(18,-9) mm；位于 8 x 28 mm 主臂实体内
+- PASS: 折叠腿 Ø8.2 收纳锁孔 -- 相对主轴 q=(9.699,17.633) mm；位于 Ø20 根部凸台并与同一固定锁销对齐
+- PASS: 折叠腿 Ø48 加强根圆 -- 根圆半径 24 mm，轴线与主轴同心
+- PASS: 折叠腿材料标记 -- 7075-T6 (SN)
+- PASS: 外颊板厚度 -- 预期 4.0 mm，实际 4 mm
+- PASS: 外颊板 Ø10.2 主轴净孔 -- 轴线 y=-129, z=52 mm；Ø10 轴销净孔
+- PASS: 外颊板 Ø10.2 承力止挡净孔 -- 轴线 y=-91.852, z=29.526 mm；Ø10 止挡销净孔
+- PASS: 外颊板单一 Ø8.5 固定锁孔 -- 轴线 y=-119.301, z=69.633 mm；折叠/部署共用
+- PASS: 外颊板材料标记 -- 6061-T6 (SS)
+- PASS: 主轴轴向长度 -- 预期 16.8 mm，实际 16.8 mm
+- PASS: 主轴直径包络 -- 实际 16.8 x 10 x 10 mm；目标 Ø10 mm
+- PASS: 主轴真实圆柱面 -- 轴向 X，轴心为零件原点
+- PASS: 主轴材料标记 -- AISI 304
+- PASS: 承力硬止挡轴向长度 -- 预期 16.8 mm，实际 16.8 mm
+- PASS: 承力硬止挡直径包络 -- 实际 16.8 x 10 x 10 mm；目标 Ø10 mm
+- PASS: 承力硬止挡真实圆柱面 -- 轴向 X，轴心为零件原点
+- PASS: 承力硬止挡材料标记 -- AISI 304
+- PASS: 固定索引销轴向长度 -- 预期 12 mm，实际 12 mm
+- PASS: 固定索引销直径包络 -- 实际 12 x 8 x 8 mm；目标 Ø8 mm
+- PASS: 固定索引销真实圆柱面 -- 轴向 X，轴心为零件原点
+- PASS: 固定索引销材料标记 -- AISI 304
+- PASS: 承力隔柱夹层长度 -- 预期 8.8 mm，实际 8.8 mm
+- PASS: 隔柱存在真实横向圆柱面 -- 局部轴线 y=0, z=0 mm
+- PASS: 隔柱材料标记 -- 7075-T6 (SN)
+- PASS: 单个 7075 压缩隔柱 CAD 质量预算 -- 0.002 kg；上限 0.003 kg；钢轴与钢止挡未替换
+- PASS: 偏置脚跟耐磨嵌片 8 x 8 x 24 mm -- 实际 8 x 8 x 24 mm
+- PASS: 脚跟嵌片材料标记 -- AISI 304
+- PASS: 橡胶脚 Ø26 x 8.4 mm 包络 -- 实际 8.4 x 26 x 26 mm
+- PASS: 橡胶脚真实 Ø26 圆柱面 -- 轴向 X，轴心为零件原点；带开口插接槽
+- PASS: 橡胶脚材料标记 -- NEOPRENE
+- PASS: V0.7 运输盖五实体折弯概念 -- 面板、左右侧回边和上下回边共 5 个实体
+- PASS: V0.7 运输盖外包络 -- 实际 579 x 423.4 x 84.4 mm；目标 579.0 x 423.4 x 84.4 mm，1.2 mm 深回边并含两条防鼓压筋
+- PASS: V0.7 运输盖材料标记 -- 5052-H32
+- PASS: 1.2 mm 深回边运输盖 CAD 质量预算 -- 1.321 kg；上限 1.35 kg
+- PASS: 提手承力加强板 128 x 4 x 30 mm -- 实际 128 x 4 x 30 mm
+- PASS: 提手承力加强板材料标记 -- 6061-T6 (SS)
+
+## 2001 点理想二维连续扫掠
+
+- PASS: 扫掠采样数不少于 2001 -- 2001 点，包含收纳与部署端点
+- PASS: 收纳至 60° 目标全程联合间隙不小于 -0.02 mm -- 联合轮廓 min=0 mm @ 87.753°，q=(-21,-38) mm
+- PASS: 硬止挡仅在部署终点达到零间隙 -- 终点间隙=0 mm；全程最小值索引=2000/2000
+- PASS: 终点之前没有 ±0.02 mm 近接触 -- 终点前近零间隙采样点=0
+- PASS: 终点由脚跟嵌片承载而非根圆/铝耳/直臂/锁止凸台卡死 -- 脚跟 脚跟嵌片 min=0 mm @ 87.753°，q=(-21,-38) mm；铝耳 切座铝耳 min=7 mm @ 87.753°，q=(-21,-38) mm；根圆 Ø48 根圆 min=14.417 mm @ 3.73°，q=(35.607,-24.842) mm；直臂 28 mm 直臂和脚垫颈 min=3.474 mm @ 0°，q=(37.148,-22.474) mm；锁止凸台 收纳锁孔 Ø20 根部凸台 min=33.6 mm @ 0°，q=(37.148,-22.474) mm
+- PASS: 隔柱 1 与折腿/脚垫全扫掠名义净距不少于 2.0 mm -- 隔柱(-173,47) min=2.602 mm @ 0°，q=(-44,-5) mm
+- PASS: 隔柱 2 与折腿/脚垫全扫掠名义净距不少于 2.0 mm -- 隔柱(-170,68) min=14.011 mm @ 1.097°，q=(-40.686,16.782) mm
+- PASS: 隔柱 3 与折腿/脚垫全扫掠名义净距不少于 2.0 mm -- 隔柱(-60,30) min=2 mm @ 0°，q=(69,-22) mm
+- PASS: 隔柱 4 与折腿/脚垫全扫掠名义净距不少于 2.0 mm -- 隔柱(0,30) min=2 mm @ 0°，q=(129,-22) mm
+- PASS: 隔柱 5 与折腿/脚垫全扫掠名义净距不少于 2.0 mm -- 隔柱(60,30) min=3.361 mm @ 0°，q=(189,-22) mm
+- 冻结部署角=87.753°；固定止挡相对主轴 case 坐标=(37.148,-22.474) mm。
+- 联合最小间隙：联合轮廓 min=0 mm @ 87.753°，q=(-21,-38) mm
+- 分轮廓最小值：根圆 Ø48 根圆 min=14.417 mm @ 3.73°，q=(35.607,-24.842) mm；直臂 28 mm 直臂和脚垫颈 min=3.474 mm @ 0°，q=(37.148,-22.474) mm；铝耳 切座铝耳 min=7 mm @ 87.753°，q=(-21,-38) mm；脚跟 脚跟嵌片 min=0 mm @ 87.753°，q=(-21,-38) mm；锁止凸台 收纳锁孔 Ø20 根部凸台 min=33.6 mm @ 0°，q=(37.148,-22.474) mm。
+
+## 早期稳定与止挡载荷算术复核
+
+- PASS: 止挡接触法向力臂按 38.0 mm 计算 -- Ø10 止挡圆柱与偏置钢脚跟 y=-26 平面相切，接触法向沿腿局部 Y；力臂=|z|=38 mm，而不是主轴到止挡中心的径向距离
+- PASS: 400 N 单腿、185 mm、1.5 倍系数的止挡反力算术 -- 2.921 kN；仅为早期量级筛查，不是结构认证
+- PASS: 隔柱 1 的 Ø12 外圆到外颊板主片边缘至少保留 5.0 mm -- 中心=(-173,47) mm；最小名义实体=5 mm
+- PASS: 隔柱 2 的 Ø12 外圆到外颊板主片边缘至少保留 5.0 mm -- 中心=(-170,68) mm；最小名义实体=6 mm
+- PASS: 隔柱 3 的 Ø12 外圆到外颊板主片边缘至少保留 5.0 mm -- 中心=(-60,30) mm；最小名义实体=6 mm
+- PASS: 隔柱 4 的 Ø12 外圆到外颊板主片边缘至少保留 5.0 mm -- 中心=(0,30) mm；最小名义实体=6 mm
+- PASS: 隔柱 5 的 Ø12 外圆到外颊板主片边缘至少保留 5.0 mm -- 中心=(60,30) mm；最小名义实体=6 mm
+- PASS: 通风槽与脚架外颊板形成明确视觉/结构分区 -- 前向间隔 11 mm，上向间隔 10 mm；槽组不再贴靠脚架护板
+
+## Open：原生装配与 STEP
+
+- PASS: Open 原生 SLDASM 存在 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\assemblies\Rack4Modules_OpenCase_V07.SLDASM
+- PASS: Open STEP 存在 -- C:\Users\LENOVO\Desktop\Rack4Modules\exports\Rack4Modules_OpenCase_V07.STEP
+- PASS: Open 验证公式自身的实例总数 -- 公式=69，冻结值=69
+- WARNING: SOLIDWORKS 打开警告：Rack4Modules_OpenCase_V07.SLDASM -- warning bitmask=32
+- PASS: Open 原生装配可只读打开 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\assemblies\Rack4Modules_OpenCase_V07.SLDASM
+- PASS: Open IMassProperty CAD 质量可读 -- 5.213 kg；材料库与当前原生装配计算值，不是秤重实测
+- PASS: Open 空箱 CAD 质量不超过 V0.7 减重预算 -- 5.213 kg；上限 5.3 kg；不含盖、电源和模块
+- PASS: Open 精确顶层组件数 -- 冻结=69，API=69，枚举=69
+- PASS: Open 禁止 V0.4/V0.5 旧脚架残留：SideFrame_V04 -- 未发现
+- PASS: Open 禁止 V0.4/V0.5 旧脚架残留：SideFrame_V05 -- 未发现
+- PASS: Open 禁止 V0.4/V0.5 旧脚架残留：SideKickstand_V04 -- 未发现
+- PASS: Open 禁止 V0.4/V0.5 旧脚架残留：SideKickstand_V05 -- 未发现
+- PASS: Open 禁止 V0.4/V0.5 旧脚架残留：KickstandOuterCheek_V05 -- 未发现
+- PASS: Open 禁止 V0.4/V0.5 旧脚架残留：KickstandPivotPin_V05 -- 未发现
+- PASS: Open 禁止 V0.4/V0.5 旧脚架残留：KickstandSpacer_V05 -- 未发现
+- PASS: Open 禁止 V0.4/V0.5 旧脚架残留：KickstandIndexPin_V05 -- 未发现
+- PASS: Open 数量：BackPanel_V07_5052_1p5mm_VESADoubler -- 冻结=1，实际=1
+- PASS: Open 精确源路径：BackPanel_V07_5052_1p5mm_VESADoubler -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\BackPanel_V07_5052_1p5mm_VESADoubler.SLDPRT
+- PASS: Open 精确变换：BackPanel_V07_5052_1p5mm_VESADoubler -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：SideFrame_V07_StableDoubleShearInner -- 冻结=2，实际=2
+- PASS: Open 精确源路径：SideFrame_V07_StableDoubleShearInner -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\SideFrame_V07_StableDoubleShearInner.SLDPRT
+- PASS: Open 精确变换：SideFrame_V07_StableDoubleShearInner -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower -- 冻结=1，实际=1
+- PASS: Open 精确源路径：UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower.SLDPRT
+- PASS: Open 精确变换：UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：LowerEdge_V03_HiddenVent -- 冻结=1，实际=1
+- PASS: Open 精确源路径：LowerEdge_V03_HiddenVent -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\LowerEdge_V03_HiddenVent.SLDPRT
+- PASS: Open 精确变换：LowerEdge_V03_HiddenVent -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：Rail_104HP_V07_ClosedTube_EndBoss -- 冻结=6，实际=6
+- PASS: Open 精确源路径：Rail_104HP_V07_ClosedTube_EndBoss -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\Rail_104HP_V07_ClosedTube_EndBoss.SLDPRT
+- PASS: Open 精确变换：Rail_104HP_V07_ClosedTube_EndBoss -- 6 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：ThreadStrip_104HP_M3_AISI304_V04 -- 冻结=6，实际=6
+- PASS: Open 精确源路径：ThreadStrip_104HP_M3_AISI304_V04 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\ThreadStrip_104HP_M3_AISI304_V04.SLDPRT
+- PASS: Open 精确变换：ThreadStrip_104HP_M3_AISI304_V04 -- 6 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：RailEndBlock_M3 -- 冻结=12，实际=12
+- PASS: Open 精确源路径：RailEndBlock_M3 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\RailEndBlock_M3.SLDPRT
+- PASS: Open 精确变换：RailEndBlock_M3 -- 12 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：RearCrossBeam_6061 -- 冻结=2，实际=2
+- PASS: Open 精确源路径：RearCrossBeam_6061 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\RearCrossBeam_6061.SLDPRT
+- PASS: Open 精确变换：RearCrossBeam_6061 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：VesaStile_6061 -- 冻结=2，实际=2
+- PASS: Open 精确源路径：VesaStile_6061 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\VesaStile_6061.SLDPRT
+- PASS: Open 精确变换：VesaStile_6061 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：VesaBridge_6061_V04_DirectMount -- 冻结=2，实际=2
+- PASS: Open 精确源路径：VesaBridge_6061_V04_DirectMount -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\VesaBridge_6061_V04_DirectMount.SLDPRT
+- PASS: Open 精确变换：VesaBridge_6061_V04_DirectMount -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：UpperAudio_V04_2x4_TRS635 -- 冻结=1，实际=1
+- PASS: Open 精确源路径：UpperAudio_V04_2x4_TRS635 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperAudio_V04_2x4_TRS635.SLDPRT
+- PASS: Open 精确变换：UpperAudio_V04_2x4_TRS635 -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：UpperMidiUsb_V04_3xDIN_USB_C_Inline -- 冻结=1，实际=1
+- PASS: Open 精确源路径：UpperMidiUsb_V04_3xDIN_USB_C_Inline -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperMidiUsb_V04_3xDIN_USB_C_Inline.SLDPRT
+- PASS: Open 精确变换：UpperMidiUsb_V04_3xDIN_USB_C_Inline -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：UpperAdapterBlank_V04_95mm -- 冻结=1，实际=1
+- PASS: Open 精确源路径：UpperAdapterBlank_V04_95mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperAdapterBlank_V04_95mm.SLDPRT
+- PASS: Open 精确变换：UpperAdapterBlank_V04_95mm -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：RearCarryHandle_V03_ClearanceFit -- 冻结=1，实际=1
+- PASS: Open 精确源路径：RearCarryHandle_V03_ClearanceFit -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\RearCarryHandle_V03_ClearanceFit.SLDPRT
+- PASS: Open 精确变换：RearCarryHandle_V03_ClearanceFit -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：CarryHandleSpreader_V07_6061_4mm -- 冻结=1，实际=1
+- PASS: Open 精确源路径：CarryHandleSpreader_V07_6061_4mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\CarryHandleSpreader_V07_6061_4mm.SLDPRT
+- PASS: Open 精确变换：CarryHandleSpreader_V07_6061_4mm -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：SideKickstand_V07_185mm_8x28 -- 冻结=2，实际=2
+- PASS: Open 精确源路径：SideKickstand_V07_185mm_8x28 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\SideKickstand_V07_185mm_8x28.SLDPRT
+- PASS: Open 精确变换：SideKickstand_V07_185mm_8x28 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：InternalLidCatch_V03 -- 冻结=4，实际=4
+- PASS: Open 精确源路径：InternalLidCatch_V03 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\InternalLidCatch_V03.SLDPRT
+- PASS: Open 精确变换：InternalLidCatch_V03 -- 4 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：FourBackFeet_V03 -- 冻结=1，实际=1
+- PASS: Open 精确源路径：FourBackFeet_V03 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\FourBackFeet_V03.SLDPRT
+- PASS: Open 精确变换：FourBackFeet_V03 -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：KickstandOuterCheek_V07_4mm -- 冻结=2，实际=2
+- PASS: Open 精确源路径：KickstandOuterCheek_V07_4mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandOuterCheek_V07_4mm.SLDPRT
+- PASS: Open 精确变换：KickstandOuterCheek_V07_4mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：KickstandPivotPin_V07_10mm -- 冻结=2，实际=2
+- PASS: Open 精确源路径：KickstandPivotPin_V07_10mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandPivotPin_V07_10mm.SLDPRT
+- PASS: Open 精确变换：KickstandPivotPin_V07_10mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：KickstandSpacer_V07_8p8mm_M5 -- 冻结=10，实际=10
+- PASS: Open 精确源路径：KickstandSpacer_V07_8p8mm_M5 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandSpacer_V07_8p8mm_M5.SLDPRT
+- PASS: Open 精确变换：KickstandSpacer_V07_8p8mm_M5 -- 10 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：KickstandLoadStopPin_V07_10mm -- 冻结=2，实际=2
+- PASS: Open 精确源路径：KickstandLoadStopPin_V07_10mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandLoadStopPin_V07_10mm.SLDPRT
+- PASS: Open 精确变换：KickstandLoadStopPin_V07_10mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：KickstandHeelInsert_V07 -- 冻结=2，实际=2
+- PASS: Open 精确源路径：KickstandHeelInsert_V07 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandHeelInsert_V07.SLDPRT
+- PASS: Open 精确变换：KickstandHeelInsert_V07 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：KickstandFootPad_V07_Rubber -- 冻结=2，实际=2
+- PASS: Open 精确源路径：KickstandFootPad_V07_Rubber -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandFootPad_V07_Rubber.SLDPRT
+- PASS: Open 精确变换：KickstandFootPad_V07_Rubber -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 数量：KickstandCaptiveIndexPin_V07_8mm -- 冻结=2，实际=2
+- PASS: Open 精确源路径：KickstandCaptiveIndexPin_V07_8mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandCaptiveIndexPin_V07_8mm.SLDPRT
+- PASS: Open 精确变换：KickstandCaptiveIndexPin_V07_8mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Open 内侧框中心面 x=±273 -- 实际 x=[-273, 273] mm
+- PASS: Open 8 mm 腿中心面 x=±279.4 -- 实际 x=[-279.4, 279.4] mm
+- PASS: Open 外颊中心面 x=±285.8 -- 实际 x=[-285.8, 285.8] mm
+- PASS: Open Ø10 主轴中心面 x=±279.4 -- 实际 x=[-279.4, 279.4] mm
+- PASS: Open 10 个 8.8 mm 隔柱中心面 x=±279.4 -- 实际 x=[-279.4, -279.4, -279.4, -279.4, -279.4, 279.4, 279.4, 279.4, 279.4, 279.4] mm
+- PASS: Open Ø10 止挡中心面 x=±279.4 -- 实际 x=[-279.4, 279.4] mm
+- PASS: Open Ø8 固定索引销中心面 x=±281.8 -- 实际 x=[-281.8, 281.8] mm
+- PASS: Open 脚跟嵌片中心面 x=±279.4 -- 实际 x=[-279.4, 279.4] mm
+- PASS: Open 橡胶脚中心面 x=±279.4 -- 实际 x=[-279.4, 279.4] mm
+- PASS: Open 提手加强板唯一且位于中央 -- 实际 x=[0] mm
+- PASS: Open 外颊外表面 x=±287.8 -- 实际外侧坐标=[-287.8, 287.8] mm
+- PASS: Open 主轴端面 x=±287.8 -- 实际外侧坐标=[-287.8, 287.8] mm
+- PASS: Open 承力止挡端面 x=±287.8 -- 实际外侧坐标=[-287.8, 287.8] mm
+- PASS: Open 锁销端面 x=±287.8 -- 实际外侧坐标=[-287.8, 287.8] mm
+- PASS: Open 两内侧框净宽 542 mm -- 右内表面减左内表面=542 mm
+- PASS: Open 左侧主轴双剪同轴 -- 最大 YZ 偏差=0 mm；主轴至腿孔三维误差=0 mm
+- PASS: Open 左侧Ø10 硬止挡双剪同轴 -- 最大 YZ 偏差=0 mm
+- PASS: Open 左侧固定 Ø8 索引销与收纳腿孔同轴 -- 最大 YZ 轴线偏差=0 mm；销轴向位置不要求与腿孔中心 X 相同
+- PASS: Open 右侧主轴双剪同轴 -- 最大 YZ 偏差=0 mm；主轴至腿孔三维误差=0 mm
+- PASS: Open 右侧Ø10 硬止挡双剪同轴 -- 最大 YZ 偏差=0 mm
+- PASS: Open 右侧固定 Ø8 索引销与收纳腿孔同轴 -- 最大 YZ 轴线偏差=0 mm；销轴向位置不要求与腿孔中心 X 相同
+- PASS: Open 箱体 CAD 包络总宽 575.6 mm（排除桌面参考体与展示用分离盖） -- x=-287.8..287.8 mm，总宽=575.6 mm
+- PASS: Open 收纳腿铰点 1 -- (-279.4,-129,52) mm
+- PASS: Open 收纳腿铰点 2 -- (279.4,-129,52) mm
+- PASS: Open 左侧折叠腿孔与同一固定索引销对齐 -- 销 YZ=(-119.301,69.633) mm；腿孔轴线偏差=0 mm
+- PASS: Open 右侧折叠腿孔与同一固定索引销对齐 -- 销 YZ=(-119.301,69.633) mm；腿孔轴线偏差=0 mm
+- PASS: Open 离散干涉结果全部分类 -- API=0，真实=0，电源违规=0，已知包装=0，参考体=0，接触=0
+- PASS: Open 离散姿态未检出真实组件负体积干涉 -- 主轴、双剪颊板、8 x 28 mm 腿、止挡、固定索引销、脚跟嵌片、插接橡胶脚和提手加强板均纳入分类。
+- PASS: Open STEP 临时副本可由 SOLIDWORKS 导入 -- importErrors=0；源文件=C:\Users\LENOVO\Desktop\Rack4Modules\exports\Rack4Modules_OpenCase_V07.STEP
+- PASS: Open STEP 导入包含装配几何 -- 69 个组件
+
+## Transport：原生装配与 STEP
+
+- PASS: Transport 原生 SLDASM 存在 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\assemblies\Rack4Modules_TransportClosed_V07.SLDASM
+- PASS: Transport STEP 存在 -- C:\Users\LENOVO\Desktop\Rack4Modules\exports\Rack4Modules_TransportClosed_V07.STEP
+- PASS: Transport 验证公式自身的实例总数 -- 公式=70，冻结值=70
+- WARNING: SOLIDWORKS 打开警告：Rack4Modules_TransportClosed_V07.SLDASM -- warning bitmask=32
+- PASS: Transport 原生装配可只读打开 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\assemblies\Rack4Modules_TransportClosed_V07.SLDASM
+- PASS: Transport IMassProperty CAD 质量可读 -- 6.534 kg；材料库与当前原生装配计算值，不是秤重实测
+- PASS: Transport 含盖 CAD 质量不超过 V0.7 减重预算 -- 6.534 kg；上限 6.7 kg；不含电源和模块
+- PASS: Transport 精确顶层组件数 -- 冻结=70，API=70，枚举=70
+- PASS: Transport 禁止 V0.4/V0.5 旧脚架残留：SideFrame_V04 -- 未发现
+- PASS: Transport 禁止 V0.4/V0.5 旧脚架残留：SideFrame_V05 -- 未发现
+- PASS: Transport 禁止 V0.4/V0.5 旧脚架残留：SideKickstand_V04 -- 未发现
+- PASS: Transport 禁止 V0.4/V0.5 旧脚架残留：SideKickstand_V05 -- 未发现
+- PASS: Transport 禁止 V0.4/V0.5 旧脚架残留：KickstandOuterCheek_V05 -- 未发现
+- PASS: Transport 禁止 V0.4/V0.5 旧脚架残留：KickstandPivotPin_V05 -- 未发现
+- PASS: Transport 禁止 V0.4/V0.5 旧脚架残留：KickstandSpacer_V05 -- 未发现
+- PASS: Transport 禁止 V0.4/V0.5 旧脚架残留：KickstandIndexPin_V05 -- 未发现
+- PASS: Transport 数量：BackPanel_V07_5052_1p5mm_VESADoubler -- 冻结=1，实际=1
+- PASS: Transport 精确源路径：BackPanel_V07_5052_1p5mm_VESADoubler -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\BackPanel_V07_5052_1p5mm_VESADoubler.SLDPRT
+- PASS: Transport 精确变换：BackPanel_V07_5052_1p5mm_VESADoubler -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：SideFrame_V07_StableDoubleShearInner -- 冻结=2，实际=2
+- PASS: Transport 精确源路径：SideFrame_V07_StableDoubleShearInner -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\SideFrame_V07_StableDoubleShearInner.SLDPRT
+- PASS: Transport 精确变换：SideFrame_V07_StableDoubleShearInner -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower -- 冻结=1，实际=1
+- PASS: Transport 精确源路径：UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower.SLDPRT
+- PASS: Transport 精确变换：UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：LowerEdge_V03_HiddenVent -- 冻结=1，实际=1
+- PASS: Transport 精确源路径：LowerEdge_V03_HiddenVent -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\LowerEdge_V03_HiddenVent.SLDPRT
+- PASS: Transport 精确变换：LowerEdge_V03_HiddenVent -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：Rail_104HP_V07_ClosedTube_EndBoss -- 冻结=6，实际=6
+- PASS: Transport 精确源路径：Rail_104HP_V07_ClosedTube_EndBoss -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\Rail_104HP_V07_ClosedTube_EndBoss.SLDPRT
+- PASS: Transport 精确变换：Rail_104HP_V07_ClosedTube_EndBoss -- 6 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：ThreadStrip_104HP_M3_AISI304_V04 -- 冻结=6，实际=6
+- PASS: Transport 精确源路径：ThreadStrip_104HP_M3_AISI304_V04 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\ThreadStrip_104HP_M3_AISI304_V04.SLDPRT
+- PASS: Transport 精确变换：ThreadStrip_104HP_M3_AISI304_V04 -- 6 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：RailEndBlock_M3 -- 冻结=12，实际=12
+- PASS: Transport 精确源路径：RailEndBlock_M3 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\RailEndBlock_M3.SLDPRT
+- PASS: Transport 精确变换：RailEndBlock_M3 -- 12 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：RearCrossBeam_6061 -- 冻结=2，实际=2
+- PASS: Transport 精确源路径：RearCrossBeam_6061 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\RearCrossBeam_6061.SLDPRT
+- PASS: Transport 精确变换：RearCrossBeam_6061 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：VesaStile_6061 -- 冻结=2，实际=2
+- PASS: Transport 精确源路径：VesaStile_6061 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\VesaStile_6061.SLDPRT
+- PASS: Transport 精确变换：VesaStile_6061 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：VesaBridge_6061_V04_DirectMount -- 冻结=2，实际=2
+- PASS: Transport 精确源路径：VesaBridge_6061_V04_DirectMount -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\VesaBridge_6061_V04_DirectMount.SLDPRT
+- PASS: Transport 精确变换：VesaBridge_6061_V04_DirectMount -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：UpperAudio_V04_2x4_TRS635 -- 冻结=1，实际=1
+- PASS: Transport 精确源路径：UpperAudio_V04_2x4_TRS635 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperAudio_V04_2x4_TRS635.SLDPRT
+- PASS: Transport 精确变换：UpperAudio_V04_2x4_TRS635 -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：UpperMidiUsb_V04_3xDIN_USB_C_Inline -- 冻结=1，实际=1
+- PASS: Transport 精确源路径：UpperMidiUsb_V04_3xDIN_USB_C_Inline -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperMidiUsb_V04_3xDIN_USB_C_Inline.SLDPRT
+- PASS: Transport 精确变换：UpperMidiUsb_V04_3xDIN_USB_C_Inline -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：UpperAdapterBlank_V04_95mm -- 冻结=1，实际=1
+- PASS: Transport 精确源路径：UpperAdapterBlank_V04_95mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperAdapterBlank_V04_95mm.SLDPRT
+- PASS: Transport 精确变换：UpperAdapterBlank_V04_95mm -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：RearCarryHandle_V03_ClearanceFit -- 冻结=1，实际=1
+- PASS: Transport 精确源路径：RearCarryHandle_V03_ClearanceFit -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\RearCarryHandle_V03_ClearanceFit.SLDPRT
+- PASS: Transport 精确变换：RearCarryHandle_V03_ClearanceFit -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：CarryHandleSpreader_V07_6061_4mm -- 冻结=1，实际=1
+- PASS: Transport 精确源路径：CarryHandleSpreader_V07_6061_4mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\CarryHandleSpreader_V07_6061_4mm.SLDPRT
+- PASS: Transport 精确变换：CarryHandleSpreader_V07_6061_4mm -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：SideKickstand_V07_185mm_8x28 -- 冻结=2，实际=2
+- PASS: Transport 精确源路径：SideKickstand_V07_185mm_8x28 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\SideKickstand_V07_185mm_8x28.SLDPRT
+- PASS: Transport 精确变换：SideKickstand_V07_185mm_8x28 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：InternalLidCatch_V03 -- 冻结=4，实际=4
+- PASS: Transport 精确源路径：InternalLidCatch_V03 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\InternalLidCatch_V03.SLDPRT
+- PASS: Transport 精确变换：InternalLidCatch_V03 -- 4 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：FourBackFeet_V03 -- 冻结=1，实际=1
+- PASS: Transport 精确源路径：FourBackFeet_V03 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\FourBackFeet_V03.SLDPRT
+- PASS: Transport 精确变换：FourBackFeet_V03 -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：KickstandOuterCheek_V07_4mm -- 冻结=2，实际=2
+- PASS: Transport 精确源路径：KickstandOuterCheek_V07_4mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandOuterCheek_V07_4mm.SLDPRT
+- PASS: Transport 精确变换：KickstandOuterCheek_V07_4mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：KickstandPivotPin_V07_10mm -- 冻结=2，实际=2
+- PASS: Transport 精确源路径：KickstandPivotPin_V07_10mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandPivotPin_V07_10mm.SLDPRT
+- PASS: Transport 精确变换：KickstandPivotPin_V07_10mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：KickstandSpacer_V07_8p8mm_M5 -- 冻结=10，实际=10
+- PASS: Transport 精确源路径：KickstandSpacer_V07_8p8mm_M5 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandSpacer_V07_8p8mm_M5.SLDPRT
+- PASS: Transport 精确变换：KickstandSpacer_V07_8p8mm_M5 -- 10 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：KickstandLoadStopPin_V07_10mm -- 冻结=2，实际=2
+- PASS: Transport 精确源路径：KickstandLoadStopPin_V07_10mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandLoadStopPin_V07_10mm.SLDPRT
+- PASS: Transport 精确变换：KickstandLoadStopPin_V07_10mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：KickstandHeelInsert_V07 -- 冻结=2，实际=2
+- PASS: Transport 精确源路径：KickstandHeelInsert_V07 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandHeelInsert_V07.SLDPRT
+- PASS: Transport 精确变换：KickstandHeelInsert_V07 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：KickstandFootPad_V07_Rubber -- 冻结=2，实际=2
+- PASS: Transport 精确源路径：KickstandFootPad_V07_Rubber -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandFootPad_V07_Rubber.SLDPRT
+- PASS: Transport 精确变换：KickstandFootPad_V07_Rubber -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：KickstandCaptiveIndexPin_V07_8mm -- 冻结=2，实际=2
+- PASS: Transport 精确源路径：KickstandCaptiveIndexPin_V07_8mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandCaptiveIndexPin_V07_8mm.SLDPRT
+- PASS: Transport 精确变换：KickstandCaptiveIndexPin_V07_8mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 数量：DeepTravelLid_V07_StandRelief -- 冻结=1，实际=1
+- PASS: Transport 精确源路径：DeepTravelLid_V07_StandRelief -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\DeepTravelLid_V07_StandRelief.SLDPRT
+- PASS: Transport 精确变换：DeepTravelLid_V07_StandRelief -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Transport 内侧框中心面 x=±273 -- 实际 x=[-273, 273] mm
+- PASS: Transport 8 mm 腿中心面 x=±279.4 -- 实际 x=[-279.4, 279.4] mm
+- PASS: Transport 外颊中心面 x=±285.8 -- 实际 x=[285.8, -285.8] mm
+- PASS: Transport Ø10 主轴中心面 x=±279.4 -- 实际 x=[279.4, -279.4] mm
+- PASS: Transport 10 个 8.8 mm 隔柱中心面 x=±279.4 -- 实际 x=[279.4, 279.4, 279.4, 279.4, 279.4, -279.4, -279.4, -279.4, -279.4, -279.4] mm
+- PASS: Transport Ø10 止挡中心面 x=±279.4 -- 实际 x=[279.4, -279.4] mm
+- PASS: Transport Ø8 固定索引销中心面 x=±281.8 -- 实际 x=[281.8, -281.8] mm
+- PASS: Transport 脚跟嵌片中心面 x=±279.4 -- 实际 x=[279.4, -279.4] mm
+- PASS: Transport 橡胶脚中心面 x=±279.4 -- 实际 x=[279.4, -279.4] mm
+- PASS: Transport 提手加强板唯一且位于中央 -- 实际 x=[0] mm
+- PASS: Transport 外颊外表面 x=±287.8 -- 实际外侧坐标=[287.8, -287.8] mm
+- PASS: Transport 主轴端面 x=±287.8 -- 实际外侧坐标=[287.8, -287.8] mm
+- PASS: Transport 承力止挡端面 x=±287.8 -- 实际外侧坐标=[287.8, -287.8] mm
+- PASS: Transport 锁销端面 x=±287.8 -- 实际外侧坐标=[287.8, -287.8] mm
+- PASS: Transport 两内侧框净宽 542 mm -- 右内表面减左内表面=542 mm
+- PASS: Transport 左侧主轴双剪同轴 -- 最大 YZ 偏差=0 mm；主轴至腿孔三维误差=0 mm
+- PASS: Transport 左侧Ø10 硬止挡双剪同轴 -- 最大 YZ 偏差=0 mm
+- PASS: Transport 左侧固定 Ø8 索引销与收纳腿孔同轴 -- 最大 YZ 轴线偏差=0 mm；销轴向位置不要求与腿孔中心 X 相同
+- PASS: Transport 右侧主轴双剪同轴 -- 最大 YZ 偏差=0 mm；主轴至腿孔三维误差=0 mm
+- PASS: Transport 右侧Ø10 硬止挡双剪同轴 -- 最大 YZ 偏差=0 mm
+- PASS: Transport 右侧固定 Ø8 索引销与收纳腿孔同轴 -- 最大 YZ 轴线偏差=0 mm；销轴向位置不要求与腿孔中心 X 相同
+- PASS: Transport 箱体 CAD 包络总宽 575.6 mm（排除桌面参考体与展示用分离盖） -- x=-287.8..287.8 mm，总宽=575.6 mm
+- PASS: Transport 收纳腿铰点 1 -- (-279.4,-129,52) mm
+- PASS: Transport 收纳腿铰点 2 -- (279.4,-129,52) mm
+- PASS: Transport 左侧折叠腿孔与同一固定索引销对齐 -- 销 YZ=(-119.301,69.633) mm；腿孔轴线偏差=0 mm
+- PASS: Transport 右侧折叠腿孔与同一固定索引销对齐 -- 销 YZ=(-119.301,69.633) mm；腿孔轴线偏差=0 mm
+- PASS: Transport 离散干涉结果全部分类 -- API=0，真实=0，电源违规=0，已知包装=0，参考体=0，接触=0
+- PASS: Transport 离散姿态未检出真实组件负体积干涉 -- 主轴、双剪颊板、8 x 28 mm 腿、止挡、固定索引销、脚跟嵌片、插接橡胶脚和提手加强板均纳入分类。
+- PASS: Transport STEP 临时副本可由 SOLIDWORKS 导入 -- importErrors=0；源文件=C:\Users\LENOVO\Desktop\Rack4Modules\exports\Rack4Modules_TransportClosed_V07.STEP
+- PASS: Transport STEP 导入包含装配几何 -- 70 个组件
+
+## Clearance：原生装配与 STEP
+
+- PASS: Clearance 原生 SLDASM 存在 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\assemblies\Rack4Modules_ClearanceCheck_V07.SLDASM
+- PASS: Clearance STEP 存在 -- C:\Users\LENOVO\Desktop\Rack4Modules\exports\Rack4Modules_ClearanceCheck_V07.STEP
+- PASS: Clearance 验证公式自身的实例总数 -- 公式=77，冻结值=77
+- WARNING: SOLIDWORKS 打开警告：Rack4Modules_ClearanceCheck_V07.SLDASM -- warning bitmask=32
+- PASS: Clearance 原生装配可只读打开 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\assemblies\Rack4Modules_ClearanceCheck_V07.SLDASM
+- PASS: Clearance IMassProperty CAD 质量可读 -- 20.964 kg；材料库与当前原生装配计算值，不是秤重实测
+- PASS: Clearance 精确顶层组件数 -- 冻结=77，API=77，枚举=77
+- PASS: Clearance 禁止 V0.4/V0.5 旧脚架残留：SideFrame_V04 -- 未发现
+- PASS: Clearance 禁止 V0.4/V0.5 旧脚架残留：SideFrame_V05 -- 未发现
+- PASS: Clearance 禁止 V0.4/V0.5 旧脚架残留：SideKickstand_V04 -- 未发现
+- PASS: Clearance 禁止 V0.4/V0.5 旧脚架残留：SideKickstand_V05 -- 未发现
+- PASS: Clearance 禁止 V0.4/V0.5 旧脚架残留：KickstandOuterCheek_V05 -- 未发现
+- PASS: Clearance 禁止 V0.4/V0.5 旧脚架残留：KickstandPivotPin_V05 -- 未发现
+- PASS: Clearance 禁止 V0.4/V0.5 旧脚架残留：KickstandSpacer_V05 -- 未发现
+- PASS: Clearance 禁止 V0.4/V0.5 旧脚架残留：KickstandIndexPin_V05 -- 未发现
+- PASS: Clearance 数量：BackPanel_V07_5052_1p5mm_VESADoubler -- 冻结=1，实际=1
+- PASS: Clearance 精确源路径：BackPanel_V07_5052_1p5mm_VESADoubler -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\BackPanel_V07_5052_1p5mm_VESADoubler.SLDPRT
+- PASS: Clearance 精确变换：BackPanel_V07_5052_1p5mm_VESADoubler -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：SideFrame_V07_StableDoubleShearInner -- 冻结=2，实际=2
+- PASS: Clearance 精确源路径：SideFrame_V07_StableDoubleShearInner -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\SideFrame_V07_StableDoubleShearInner.SLDPRT
+- PASS: Clearance 精确变换：SideFrame_V07_StableDoubleShearInner -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower -- 冻结=1，实际=1
+- PASS: Clearance 精确源路径：UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower.SLDPRT
+- PASS: Clearance 精确变换：UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：LowerEdge_V03_HiddenVent -- 冻结=1，实际=1
+- PASS: Clearance 精确源路径：LowerEdge_V03_HiddenVent -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\LowerEdge_V03_HiddenVent.SLDPRT
+- PASS: Clearance 精确变换：LowerEdge_V03_HiddenVent -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：Rail_104HP_V07_ClosedTube_EndBoss -- 冻结=6，实际=6
+- PASS: Clearance 精确源路径：Rail_104HP_V07_ClosedTube_EndBoss -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\Rail_104HP_V07_ClosedTube_EndBoss.SLDPRT
+- PASS: Clearance 精确变换：Rail_104HP_V07_ClosedTube_EndBoss -- 6 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：ThreadStrip_104HP_M3_AISI304_V04 -- 冻结=6，实际=6
+- PASS: Clearance 精确源路径：ThreadStrip_104HP_M3_AISI304_V04 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\ThreadStrip_104HP_M3_AISI304_V04.SLDPRT
+- PASS: Clearance 精确变换：ThreadStrip_104HP_M3_AISI304_V04 -- 6 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：RailEndBlock_M3 -- 冻结=12，实际=12
+- PASS: Clearance 精确源路径：RailEndBlock_M3 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\RailEndBlock_M3.SLDPRT
+- PASS: Clearance 精确变换：RailEndBlock_M3 -- 12 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：RearCrossBeam_6061 -- 冻结=2，实际=2
+- PASS: Clearance 精确源路径：RearCrossBeam_6061 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\RearCrossBeam_6061.SLDPRT
+- PASS: Clearance 精确变换：RearCrossBeam_6061 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：VesaStile_6061 -- 冻结=2，实际=2
+- PASS: Clearance 精确源路径：VesaStile_6061 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\VesaStile_6061.SLDPRT
+- PASS: Clearance 精确变换：VesaStile_6061 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：VesaBridge_6061_V04_DirectMount -- 冻结=2，实际=2
+- PASS: Clearance 精确源路径：VesaBridge_6061_V04_DirectMount -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\VesaBridge_6061_V04_DirectMount.SLDPRT
+- PASS: Clearance 精确变换：VesaBridge_6061_V04_DirectMount -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：UpperAudio_V04_2x4_TRS635 -- 冻结=1，实际=1
+- PASS: Clearance 精确源路径：UpperAudio_V04_2x4_TRS635 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperAudio_V04_2x4_TRS635.SLDPRT
+- PASS: Clearance 精确变换：UpperAudio_V04_2x4_TRS635 -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：UpperMidiUsb_V04_3xDIN_USB_C_Inline -- 冻结=1，实际=1
+- PASS: Clearance 精确源路径：UpperMidiUsb_V04_3xDIN_USB_C_Inline -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperMidiUsb_V04_3xDIN_USB_C_Inline.SLDPRT
+- PASS: Clearance 精确变换：UpperMidiUsb_V04_3xDIN_USB_C_Inline -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：UpperAdapterBlank_V04_95mm -- 冻结=1，实际=1
+- PASS: Clearance 精确源路径：UpperAdapterBlank_V04_95mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperAdapterBlank_V04_95mm.SLDPRT
+- PASS: Clearance 精确变换：UpperAdapterBlank_V04_95mm -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：RearCarryHandle_V03_ClearanceFit -- 冻结=1，实际=1
+- PASS: Clearance 精确源路径：RearCarryHandle_V03_ClearanceFit -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\RearCarryHandle_V03_ClearanceFit.SLDPRT
+- PASS: Clearance 精确变换：RearCarryHandle_V03_ClearanceFit -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：CarryHandleSpreader_V07_6061_4mm -- 冻结=1，实际=1
+- PASS: Clearance 精确源路径：CarryHandleSpreader_V07_6061_4mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\CarryHandleSpreader_V07_6061_4mm.SLDPRT
+- PASS: Clearance 精确变换：CarryHandleSpreader_V07_6061_4mm -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：SideKickstand_V07_185mm_8x28 -- 冻结=2，实际=2
+- PASS: Clearance 精确源路径：SideKickstand_V07_185mm_8x28 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\SideKickstand_V07_185mm_8x28.SLDPRT
+- PASS: Clearance 精确变换：SideKickstand_V07_185mm_8x28 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：InternalLidCatch_V03 -- 冻结=4，实际=4
+- PASS: Clearance 精确源路径：InternalLidCatch_V03 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\InternalLidCatch_V03.SLDPRT
+- PASS: Clearance 精确变换：InternalLidCatch_V03 -- 4 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：FourBackFeet_V03 -- 冻结=1，实际=1
+- PASS: Clearance 精确源路径：FourBackFeet_V03 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\FourBackFeet_V03.SLDPRT
+- PASS: Clearance 精确变换：FourBackFeet_V03 -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：KickstandOuterCheek_V07_4mm -- 冻结=2，实际=2
+- PASS: Clearance 精确源路径：KickstandOuterCheek_V07_4mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandOuterCheek_V07_4mm.SLDPRT
+- PASS: Clearance 精确变换：KickstandOuterCheek_V07_4mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：KickstandPivotPin_V07_10mm -- 冻结=2，实际=2
+- PASS: Clearance 精确源路径：KickstandPivotPin_V07_10mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandPivotPin_V07_10mm.SLDPRT
+- PASS: Clearance 精确变换：KickstandPivotPin_V07_10mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：KickstandSpacer_V07_8p8mm_M5 -- 冻结=10，实际=10
+- PASS: Clearance 精确源路径：KickstandSpacer_V07_8p8mm_M5 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandSpacer_V07_8p8mm_M5.SLDPRT
+- PASS: Clearance 精确变换：KickstandSpacer_V07_8p8mm_M5 -- 10 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：KickstandLoadStopPin_V07_10mm -- 冻结=2，实际=2
+- PASS: Clearance 精确源路径：KickstandLoadStopPin_V07_10mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandLoadStopPin_V07_10mm.SLDPRT
+- PASS: Clearance 精确变换：KickstandLoadStopPin_V07_10mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：KickstandHeelInsert_V07 -- 冻结=2，实际=2
+- PASS: Clearance 精确源路径：KickstandHeelInsert_V07 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandHeelInsert_V07.SLDPRT
+- PASS: Clearance 精确变换：KickstandHeelInsert_V07 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：KickstandFootPad_V07_Rubber -- 冻结=2，实际=2
+- PASS: Clearance 精确源路径：KickstandFootPad_V07_Rubber -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandFootPad_V07_Rubber.SLDPRT
+- PASS: Clearance 精确变换：KickstandFootPad_V07_Rubber -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：KickstandCaptiveIndexPin_V07_8mm -- 冻结=2，实际=2
+- PASS: Clearance 精确源路径：KickstandCaptiveIndexPin_V07_8mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandCaptiveIndexPin_V07_8mm.SLDPRT
+- PASS: Clearance 精确变换：KickstandCaptiveIndexPin_V07_8mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：FitGauge_104HP_3U -- 冻结=3，实际=3
+- PASS: Clearance 精确源路径：FitGauge_104HP_3U -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\FitGauge_104HP_3U.SLDPRT
+- PASS: Clearance 精确变换：FitGauge_104HP_3U -- 3 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：ModuleDepthEnvelope_85mm_V03 -- 冻结=3，实际=3
+- PASS: Clearance 精确源路径：ModuleDepthEnvelope_85mm_V03 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\ModuleDepthEnvelope_85mm_V03.SLDPRT
+- PASS: Clearance 精确变换：ModuleDepthEnvelope_85mm_V03 -- 3 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：ReservedPowerBus_500x85x20 -- 冻结=1，实际=1
+- PASS: Clearance 精确源路径：ReservedPowerBus_500x85x20 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\ReservedPowerBus_500x85x20.SLDPRT
+- PASS: Clearance 精确变换：ReservedPowerBus_500x85x20 -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 数量：ReservedPowerSupply_210x90x45 -- 冻结=1，实际=1
+- PASS: Clearance 精确源路径：ReservedPowerSupply_210x90x45 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\ReservedPowerSupply_210x90x45.SLDPRT
+- PASS: Clearance 精确变换：ReservedPowerSupply_210x90x45 -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Clearance 内侧框中心面 x=±273 -- 实际 x=[-273, 273] mm
+- PASS: Clearance 8 mm 腿中心面 x=±279.4 -- 实际 x=[-279.4, 279.4] mm
+- PASS: Clearance 外颊中心面 x=±285.8 -- 实际 x=[-285.8, 285.8] mm
+- PASS: Clearance Ø10 主轴中心面 x=±279.4 -- 实际 x=[-279.4, 279.4] mm
+- PASS: Clearance 10 个 8.8 mm 隔柱中心面 x=±279.4 -- 实际 x=[-279.4, -279.4, -279.4, -279.4, -279.4, 279.4, 279.4, 279.4, 279.4, 279.4] mm
+- PASS: Clearance Ø10 止挡中心面 x=±279.4 -- 实际 x=[-279.4, 279.4] mm
+- PASS: Clearance Ø8 固定索引销中心面 x=±281.8 -- 实际 x=[-281.8, 281.8] mm
+- PASS: Clearance 脚跟嵌片中心面 x=±279.4 -- 实际 x=[-279.4, 279.4] mm
+- PASS: Clearance 橡胶脚中心面 x=±279.4 -- 实际 x=[-279.4, 279.4] mm
+- PASS: Clearance 提手加强板唯一且位于中央 -- 实际 x=[0] mm
+- PASS: Clearance 外颊外表面 x=±287.8 -- 实际外侧坐标=[-287.8, 287.8] mm
+- PASS: Clearance 主轴端面 x=±287.8 -- 实际外侧坐标=[-287.8, 287.8] mm
+- PASS: Clearance 承力止挡端面 x=±287.8 -- 实际外侧坐标=[-287.8, 287.8] mm
+- PASS: Clearance 锁销端面 x=±287.8 -- 实际外侧坐标=[-287.8, 287.8] mm
+- PASS: Clearance 两内侧框净宽 542 mm -- 右内表面减左内表面=542 mm
+- PASS: Clearance 左侧主轴双剪同轴 -- 最大 YZ 偏差=0 mm；主轴至腿孔三维误差=0 mm
+- PASS: Clearance 左侧Ø10 硬止挡双剪同轴 -- 最大 YZ 偏差=0 mm
+- PASS: Clearance 左侧固定 Ø8 索引销与收纳腿孔同轴 -- 最大 YZ 轴线偏差=0 mm；销轴向位置不要求与腿孔中心 X 相同
+- PASS: Clearance 右侧主轴双剪同轴 -- 最大 YZ 偏差=0 mm；主轴至腿孔三维误差=0 mm
+- PASS: Clearance 右侧Ø10 硬止挡双剪同轴 -- 最大 YZ 偏差=0 mm
+- PASS: Clearance 右侧固定 Ø8 索引销与收纳腿孔同轴 -- 最大 YZ 轴线偏差=0 mm；销轴向位置不要求与腿孔中心 X 相同
+- PASS: Clearance 箱体 CAD 包络总宽 575.6 mm（排除桌面参考体与展示用分离盖） -- x=-287.8..287.8 mm，总宽=575.6 mm
+- PASS: Clearance 收纳腿铰点 1 -- (-279.4,-129,52) mm
+- PASS: Clearance 收纳腿铰点 2 -- (279.4,-129,52) mm
+- PASS: Clearance 左侧折叠腿孔与同一固定索引销对齐 -- 销 YZ=(-119.301,69.633) mm；腿孔轴线偏差=0 mm
+- PASS: Clearance 右侧折叠腿孔与同一固定索引销对齐 -- 销 YZ=(-119.301,69.633) mm；腿孔轴线偏差=0 mm
+- WARNING: Clearance 已知模块深度/电源包络冲突 -- ModuleDepthEnvelope_85mm_V03 <-> ReservedPowerSupply_210x90x45；重叠体积=472500 mm^3；仅为保留空间包络。
+- WARNING: Clearance 已知模块深度/电源包络冲突 -- ModuleDepthEnvelope_85mm_V03 <-> ReservedPowerBus_500x85x20；重叠体积=420900 mm^3；仅为保留空间包络。
+- PASS: Clearance 离散干涉结果全部分类 -- API=2，真实=0，电源违规=0，已知包装=2，参考体=0，接触=0
+- PASS: Clearance 离散姿态未检出真实组件负体积干涉 -- 主轴、双剪颊板、8 x 28 mm 腿、止挡、固定索引销、脚跟嵌片、插接橡胶脚和提手加强板均纳入分类。
+- PASS: Clearance STEP 临时副本可由 SOLIDWORKS 导入 -- importErrors=0；源文件=C:\Users\LENOVO\Desktop\Rack4Modules\exports\Rack4Modules_ClearanceCheck_V07.STEP
+- PASS: Clearance STEP 导入包含装配几何 -- 77 个组件
+
+## Tilt60：原生装配与 STEP
+
+- PASS: Tilt60 原生 SLDASM 存在 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\assemblies\Rack4Modules_DesktopTilt60_V07.SLDASM
+- PASS: Tilt60 STEP 存在 -- C:\Users\LENOVO\Desktop\Rack4Modules\exports\Rack4Modules_DesktopTilt60_V07.STEP
+- PASS: Tilt60 验证公式自身的实例总数 -- 公式=70，冻结值=70
+- WARNING: SOLIDWORKS 打开警告：Rack4Modules_DesktopTilt60_V07.SLDASM -- warning bitmask=32
+- PASS: Tilt60 原生装配可只读打开 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\assemblies\Rack4Modules_DesktopTilt60_V07.SLDASM
+- PASS: Tilt60 IMassProperty CAD 质量可读 -- 7.196 kg；材料库与当前原生装配计算值，不是秤重实测
+- PASS: Tilt60 精确顶层组件数 -- 冻结=70，API=70，枚举=70
+- PASS: Tilt60 禁止 V0.4/V0.5 旧脚架残留：SideFrame_V04 -- 未发现
+- PASS: Tilt60 禁止 V0.4/V0.5 旧脚架残留：SideFrame_V05 -- 未发现
+- PASS: Tilt60 禁止 V0.4/V0.5 旧脚架残留：SideKickstand_V04 -- 未发现
+- PASS: Tilt60 禁止 V0.4/V0.5 旧脚架残留：SideKickstand_V05 -- 未发现
+- PASS: Tilt60 禁止 V0.4/V0.5 旧脚架残留：KickstandOuterCheek_V05 -- 未发现
+- PASS: Tilt60 禁止 V0.4/V0.5 旧脚架残留：KickstandPivotPin_V05 -- 未发现
+- PASS: Tilt60 禁止 V0.4/V0.5 旧脚架残留：KickstandSpacer_V05 -- 未发现
+- PASS: Tilt60 禁止 V0.4/V0.5 旧脚架残留：KickstandIndexPin_V05 -- 未发现
+- PASS: Tilt60 数量：BackPanel_V07_5052_1p5mm_VESADoubler -- 冻结=1，实际=1
+- PASS: Tilt60 精确源路径：BackPanel_V07_5052_1p5mm_VESADoubler -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\BackPanel_V07_5052_1p5mm_VESADoubler.SLDPRT
+- PASS: Tilt60 精确变换：BackPanel_V07_5052_1p5mm_VESADoubler -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：SideFrame_V07_StableDoubleShearInner -- 冻结=2，实际=2
+- PASS: Tilt60 精确源路径：SideFrame_V07_StableDoubleShearInner -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\SideFrame_V07_StableDoubleShearInner.SLDPRT
+- PASS: Tilt60 精确变换：SideFrame_V07_StableDoubleShearInner -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower -- 冻结=1，实际=1
+- PASS: Tilt60 精确源路径：UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower.SLDPRT
+- PASS: Tilt60 精确变换：UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：LowerEdge_V03_HiddenVent -- 冻结=1，实际=1
+- PASS: Tilt60 精确源路径：LowerEdge_V03_HiddenVent -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\LowerEdge_V03_HiddenVent.SLDPRT
+- PASS: Tilt60 精确变换：LowerEdge_V03_HiddenVent -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：Rail_104HP_V07_ClosedTube_EndBoss -- 冻结=6，实际=6
+- PASS: Tilt60 精确源路径：Rail_104HP_V07_ClosedTube_EndBoss -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\Rail_104HP_V07_ClosedTube_EndBoss.SLDPRT
+- PASS: Tilt60 精确变换：Rail_104HP_V07_ClosedTube_EndBoss -- 6 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：ThreadStrip_104HP_M3_AISI304_V04 -- 冻结=6，实际=6
+- PASS: Tilt60 精确源路径：ThreadStrip_104HP_M3_AISI304_V04 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\ThreadStrip_104HP_M3_AISI304_V04.SLDPRT
+- PASS: Tilt60 精确变换：ThreadStrip_104HP_M3_AISI304_V04 -- 6 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：RailEndBlock_M3 -- 冻结=12，实际=12
+- PASS: Tilt60 精确源路径：RailEndBlock_M3 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\RailEndBlock_M3.SLDPRT
+- PASS: Tilt60 精确变换：RailEndBlock_M3 -- 12 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：RearCrossBeam_6061 -- 冻结=2，实际=2
+- PASS: Tilt60 精确源路径：RearCrossBeam_6061 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\RearCrossBeam_6061.SLDPRT
+- PASS: Tilt60 精确变换：RearCrossBeam_6061 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：VesaStile_6061 -- 冻结=2，实际=2
+- PASS: Tilt60 精确源路径：VesaStile_6061 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\VesaStile_6061.SLDPRT
+- PASS: Tilt60 精确变换：VesaStile_6061 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：VesaBridge_6061_V04_DirectMount -- 冻结=2，实际=2
+- PASS: Tilt60 精确源路径：VesaBridge_6061_V04_DirectMount -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\VesaBridge_6061_V04_DirectMount.SLDPRT
+- PASS: Tilt60 精确变换：VesaBridge_6061_V04_DirectMount -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：UpperAudio_V04_2x4_TRS635 -- 冻结=1，实际=1
+- PASS: Tilt60 精确源路径：UpperAudio_V04_2x4_TRS635 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperAudio_V04_2x4_TRS635.SLDPRT
+- PASS: Tilt60 精确变换：UpperAudio_V04_2x4_TRS635 -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：UpperMidiUsb_V04_3xDIN_USB_C_Inline -- 冻结=1，实际=1
+- PASS: Tilt60 精确源路径：UpperMidiUsb_V04_3xDIN_USB_C_Inline -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperMidiUsb_V04_3xDIN_USB_C_Inline.SLDPRT
+- PASS: Tilt60 精确变换：UpperMidiUsb_V04_3xDIN_USB_C_Inline -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：UpperAdapterBlank_V04_95mm -- 冻结=1，实际=1
+- PASS: Tilt60 精确源路径：UpperAdapterBlank_V04_95mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperAdapterBlank_V04_95mm.SLDPRT
+- PASS: Tilt60 精确变换：UpperAdapterBlank_V04_95mm -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：RearCarryHandle_V03_ClearanceFit -- 冻结=1，实际=1
+- PASS: Tilt60 精确源路径：RearCarryHandle_V03_ClearanceFit -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\RearCarryHandle_V03_ClearanceFit.SLDPRT
+- PASS: Tilt60 精确变换：RearCarryHandle_V03_ClearanceFit -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：CarryHandleSpreader_V07_6061_4mm -- 冻结=1，实际=1
+- PASS: Tilt60 精确源路径：CarryHandleSpreader_V07_6061_4mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\CarryHandleSpreader_V07_6061_4mm.SLDPRT
+- PASS: Tilt60 精确变换：CarryHandleSpreader_V07_6061_4mm -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：SideKickstand_V07_185mm_8x28 -- 冻结=2，实际=2
+- PASS: Tilt60 精确源路径：SideKickstand_V07_185mm_8x28 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\SideKickstand_V07_185mm_8x28.SLDPRT
+- PASS: Tilt60 精确变换：SideKickstand_V07_185mm_8x28 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：InternalLidCatch_V03 -- 冻结=4，实际=4
+- PASS: Tilt60 精确源路径：InternalLidCatch_V03 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\InternalLidCatch_V03.SLDPRT
+- PASS: Tilt60 精确变换：InternalLidCatch_V03 -- 4 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：FourBackFeet_V03 -- 冻结=1，实际=1
+- PASS: Tilt60 精确源路径：FourBackFeet_V03 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\FourBackFeet_V03.SLDPRT
+- PASS: Tilt60 精确变换：FourBackFeet_V03 -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：KickstandOuterCheek_V07_4mm -- 冻结=2，实际=2
+- PASS: Tilt60 精确源路径：KickstandOuterCheek_V07_4mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandOuterCheek_V07_4mm.SLDPRT
+- PASS: Tilt60 精确变换：KickstandOuterCheek_V07_4mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：KickstandPivotPin_V07_10mm -- 冻结=2，实际=2
+- PASS: Tilt60 精确源路径：KickstandPivotPin_V07_10mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandPivotPin_V07_10mm.SLDPRT
+- PASS: Tilt60 精确变换：KickstandPivotPin_V07_10mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：KickstandSpacer_V07_8p8mm_M5 -- 冻结=10，实际=10
+- PASS: Tilt60 精确源路径：KickstandSpacer_V07_8p8mm_M5 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandSpacer_V07_8p8mm_M5.SLDPRT
+- PASS: Tilt60 精确变换：KickstandSpacer_V07_8p8mm_M5 -- 10 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：KickstandLoadStopPin_V07_10mm -- 冻结=2，实际=2
+- PASS: Tilt60 精确源路径：KickstandLoadStopPin_V07_10mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandLoadStopPin_V07_10mm.SLDPRT
+- PASS: Tilt60 精确变换：KickstandLoadStopPin_V07_10mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：KickstandHeelInsert_V07 -- 冻结=2，实际=2
+- PASS: Tilt60 精确源路径：KickstandHeelInsert_V07 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandHeelInsert_V07.SLDPRT
+- PASS: Tilt60 精确变换：KickstandHeelInsert_V07 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：KickstandFootPad_V07_Rubber -- 冻结=2，实际=2
+- PASS: Tilt60 精确源路径：KickstandFootPad_V07_Rubber -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandFootPad_V07_Rubber.SLDPRT
+- PASS: Tilt60 精确变换：KickstandFootPad_V07_Rubber -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：KickstandCaptiveIndexPin_V07_8mm -- 冻结=2，实际=2
+- PASS: Tilt60 精确源路径：KickstandCaptiveIndexPin_V07_8mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandCaptiveIndexPin_V07_8mm.SLDPRT
+- PASS: Tilt60 精确变换：KickstandCaptiveIndexPin_V07_8mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 数量：DesktopReferenceSurface_V04 -- 冻结=1，实际=1
+- PASS: Tilt60 精确源路径：DesktopReferenceSurface_V04 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\DesktopReferenceSurface_V04.SLDPRT
+- PASS: Tilt60 精确变换：DesktopReferenceSurface_V04 -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: Tilt60 内侧框中心面 x=±273 -- 实际 x=[273, -273] mm
+- PASS: Tilt60 8 mm 腿中心面 x=±279.4 -- 实际 x=[-279.4, 279.4] mm
+- PASS: Tilt60 外颊中心面 x=±285.8 -- 实际 x=[-285.8, 285.8] mm
+- PASS: Tilt60 Ø10 主轴中心面 x=±279.4 -- 实际 x=[279.4, -279.4] mm
+- PASS: Tilt60 10 个 8.8 mm 隔柱中心面 x=±279.4 -- 实际 x=[279.4, 279.4, 279.4, 279.4, 279.4, -279.4, -279.4, -279.4, -279.4, -279.4] mm
+- PASS: Tilt60 Ø10 止挡中心面 x=±279.4 -- 实际 x=[279.4, -279.4] mm
+- PASS: Tilt60 Ø8 固定索引销中心面 x=±281.8 -- 实际 x=[281.8, -281.8] mm
+- PASS: Tilt60 脚跟嵌片中心面 x=±279.4 -- 实际 x=[279.4, -279.4] mm
+- PASS: Tilt60 橡胶脚中心面 x=±279.4 -- 实际 x=[279.4, -279.4] mm
+- PASS: Tilt60 提手加强板唯一且位于中央 -- 实际 x=[0] mm
+- PASS: Tilt60 外颊外表面 x=±287.8 -- 实际外侧坐标=[-287.8, 287.8] mm
+- PASS: Tilt60 主轴端面 x=±287.8 -- 实际外侧坐标=[287.8, -287.8] mm
+- PASS: Tilt60 承力止挡端面 x=±287.8 -- 实际外侧坐标=[287.8, -287.8] mm
+- PASS: Tilt60 锁销端面 x=±287.8 -- 实际外侧坐标=[287.8, -287.8] mm
+- PASS: Tilt60 两内侧框净宽 542 mm -- 右内表面减左内表面=542 mm
+- PASS: Tilt60 左侧主轴双剪同轴 -- 最大 YZ 偏差=0 mm；主轴至腿孔三维误差=0 mm
+- PASS: Tilt60 左侧Ø10 硬止挡双剪同轴 -- 最大 YZ 偏差=0 mm
+- PASS: Tilt60 左侧固定 Ø8 索引销与部署腿孔同轴 -- 最大 YZ 轴线偏差=0 mm；销轴向位置不要求与腿孔中心 X 相同
+- PASS: Tilt60 右侧主轴双剪同轴 -- 最大 YZ 偏差=0 mm；主轴至腿孔三维误差=0 mm
+- PASS: Tilt60 右侧Ø10 硬止挡双剪同轴 -- 最大 YZ 偏差=0 mm
+- PASS: Tilt60 右侧固定 Ø8 索引销与部署腿孔同轴 -- 最大 YZ 轴线偏差=0 mm；销轴向位置不要求与腿孔中心 X 相同
+- PASS: Tilt60 箱体 CAD 包络总宽 575.6 mm（排除桌面参考体与展示用分离盖） -- x=-287.8..287.8 mm，总宽=575.6 mm
+- PASS: Tilt60 壳体后缘桌面基准 Y=0/Z=0 -- 最大 Y/Z 误差=0 mm
+- PASS: Tilt60 模块面与桌面夹角 60° -- 实测变换角=60°
+- PASS: Tilt60 主轴理论桌面高度 -- 99.148 mm；冻结 99.1480577 mm
+- PASS: Tilt60 60° 部署相对转角 -- 87.753°；冻结 87.753280°
+- PASS: Tilt60 理论支撑深度 -- 153.988 mm；冻结 153.988309 mm
+- PASS: Tilt60 左侧腿铰点保持箱体轴位 -- 三维误差=0 mm
+- PASS: Tilt60 左侧主轴至橡胶脚中心 185 mm -- 185 mm
+- PASS: Tilt60 左侧橡胶脚最低点 Y=0 -- 解析最低 Y=0 mm；GetBox 仅作近似包络，不用于圆柱切点判定
+- PASS: Tilt60 左侧橡胶脚支撑中心位置 -- 中心 Y=13 mm，Z=153.988 mm；目标 (13,153.988) mm
+- PASS: Tilt60 左侧硬止挡/脚跟零间隙且无负干涉 -- 止挡腿局部 q=(-21,-38) mm；联合间隙=0 mm；脚跟间隙=0 mm
+- PASS: Tilt60 左侧脚跟嵌片随腿且位于切座 -- 实际相对中心=(-30,-38) mm；目标 (-30,-38) mm
+- PASS: Tilt60 左侧固定索引销与部署腿孔同轴 -- YZ 轴线误差=0 mm
+- PASS: Tilt60 右侧腿铰点保持箱体轴位 -- 三维误差=0 mm
+- PASS: Tilt60 右侧主轴至橡胶脚中心 185 mm -- 185 mm
+- PASS: Tilt60 右侧橡胶脚最低点 Y=0 -- 解析最低 Y=0 mm；GetBox 仅作近似包络，不用于圆柱切点判定
+- PASS: Tilt60 右侧橡胶脚支撑中心位置 -- 中心 Y=13 mm，Z=153.988 mm；目标 (13,153.988) mm
+- PASS: Tilt60 右侧硬止挡/脚跟零间隙且无负干涉 -- 止挡腿局部 q=(-21,-38) mm；联合间隙=0 mm；脚跟间隙=0 mm
+- PASS: Tilt60 右侧脚跟嵌片随腿且位于切座 -- 实际相对中心=(-30,-38) mm；目标 (-30,-38) mm
+- PASS: Tilt60 右侧固定索引销与部署腿孔同轴 -- YZ 轴线误差=0 mm
+- PASS: Tilt60 离散干涉结果全部分类 -- API=0，真实=0，电源违规=0，已知包装=0，参考体=0，接触=0
+- PASS: Tilt60 离散姿态未检出真实组件负体积干涉 -- 主轴、双剪颊板、8 x 28 mm 腿、止挡、固定索引销、脚跟嵌片、插接橡胶脚和提手加强板均纳入分类。
+- PASS: Tilt60 STEP 临时副本可由 SOLIDWORKS 导入 -- importErrors=0；源文件=C:\Users\LENOVO\Desktop\Rack4Modules\exports\Rack4Modules_DesktopTilt60_V07.STEP
+- PASS: Tilt60 STEP 导入包含装配几何 -- 70 个组件
+
+## FinalShowcase：原生装配与 STEP
+
+- PASS: FinalShowcase 原生 SLDASM 存在 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\assemblies\Rack4Modules_ShowcaseTilt60_LidOff_V07.SLDASM
+- PASS: FinalShowcase STEP 存在 -- C:\Users\LENOVO\Desktop\Rack4Modules\exports\Rack4Modules_ShowcaseTilt60_LidOff_V07.STEP
+- PASS: FinalShowcase 验证公式自身的实例总数 -- 公式=71，冻结值=71
+- WARNING: SOLIDWORKS 打开警告：Rack4Modules_ShowcaseTilt60_LidOff_V07.SLDASM -- warning bitmask=32
+- PASS: FinalShowcase 原生装配可只读打开 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\assemblies\Rack4Modules_ShowcaseTilt60_LidOff_V07.SLDASM
+- PASS: FinalShowcase IMassProperty CAD 质量可读 -- 8.517 kg；材料库与当前原生装配计算值，不是秤重实测
+- PASS: FinalShowcase 精确顶层组件数 -- 冻结=71，API=71，枚举=71
+- PASS: FinalShowcase 禁止 V0.4/V0.5 旧脚架残留：SideFrame_V04 -- 未发现
+- PASS: FinalShowcase 禁止 V0.4/V0.5 旧脚架残留：SideFrame_V05 -- 未发现
+- PASS: FinalShowcase 禁止 V0.4/V0.5 旧脚架残留：SideKickstand_V04 -- 未发现
+- PASS: FinalShowcase 禁止 V0.4/V0.5 旧脚架残留：SideKickstand_V05 -- 未发现
+- PASS: FinalShowcase 禁止 V0.4/V0.5 旧脚架残留：KickstandOuterCheek_V05 -- 未发现
+- PASS: FinalShowcase 禁止 V0.4/V0.5 旧脚架残留：KickstandPivotPin_V05 -- 未发现
+- PASS: FinalShowcase 禁止 V0.4/V0.5 旧脚架残留：KickstandSpacer_V05 -- 未发现
+- PASS: FinalShowcase 禁止 V0.4/V0.5 旧脚架残留：KickstandIndexPin_V05 -- 未发现
+- PASS: FinalShowcase 数量：BackPanel_V07_5052_1p5mm_VESADoubler -- 冻结=1，实际=1
+- PASS: FinalShowcase 精确源路径：BackPanel_V07_5052_1p5mm_VESADoubler -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\BackPanel_V07_5052_1p5mm_VESADoubler.SLDPRT
+- PASS: FinalShowcase 精确变换：BackPanel_V07_5052_1p5mm_VESADoubler -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：SideFrame_V07_StableDoubleShearInner -- 冻结=2，实际=2
+- PASS: FinalShowcase 精确源路径：SideFrame_V07_StableDoubleShearInner -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\SideFrame_V07_StableDoubleShearInner.SLDPRT
+- PASS: FinalShowcase 精确变换：SideFrame_V07_StableDoubleShearInner -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower -- 冻结=1，实际=1
+- PASS: FinalShowcase 精确源路径：UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower.SLDPRT
+- PASS: FinalShowcase 精确变换：UpperEdge_V04_Adapter_MIDI_Handle_Audio_ClearPower -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：LowerEdge_V03_HiddenVent -- 冻结=1，实际=1
+- PASS: FinalShowcase 精确源路径：LowerEdge_V03_HiddenVent -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\LowerEdge_V03_HiddenVent.SLDPRT
+- PASS: FinalShowcase 精确变换：LowerEdge_V03_HiddenVent -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：Rail_104HP_V07_ClosedTube_EndBoss -- 冻结=6，实际=6
+- PASS: FinalShowcase 精确源路径：Rail_104HP_V07_ClosedTube_EndBoss -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\Rail_104HP_V07_ClosedTube_EndBoss.SLDPRT
+- PASS: FinalShowcase 精确变换：Rail_104HP_V07_ClosedTube_EndBoss -- 6 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：ThreadStrip_104HP_M3_AISI304_V04 -- 冻结=6，实际=6
+- PASS: FinalShowcase 精确源路径：ThreadStrip_104HP_M3_AISI304_V04 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\ThreadStrip_104HP_M3_AISI304_V04.SLDPRT
+- PASS: FinalShowcase 精确变换：ThreadStrip_104HP_M3_AISI304_V04 -- 6 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：RailEndBlock_M3 -- 冻结=12，实际=12
+- PASS: FinalShowcase 精确源路径：RailEndBlock_M3 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\RailEndBlock_M3.SLDPRT
+- PASS: FinalShowcase 精确变换：RailEndBlock_M3 -- 12 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：RearCrossBeam_6061 -- 冻结=2，实际=2
+- PASS: FinalShowcase 精确源路径：RearCrossBeam_6061 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\RearCrossBeam_6061.SLDPRT
+- PASS: FinalShowcase 精确变换：RearCrossBeam_6061 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：VesaStile_6061 -- 冻结=2，实际=2
+- PASS: FinalShowcase 精确源路径：VesaStile_6061 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\VesaStile_6061.SLDPRT
+- PASS: FinalShowcase 精确变换：VesaStile_6061 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：VesaBridge_6061_V04_DirectMount -- 冻结=2，实际=2
+- PASS: FinalShowcase 精确源路径：VesaBridge_6061_V04_DirectMount -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\VesaBridge_6061_V04_DirectMount.SLDPRT
+- PASS: FinalShowcase 精确变换：VesaBridge_6061_V04_DirectMount -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：UpperAudio_V04_2x4_TRS635 -- 冻结=1，实际=1
+- PASS: FinalShowcase 精确源路径：UpperAudio_V04_2x4_TRS635 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperAudio_V04_2x4_TRS635.SLDPRT
+- PASS: FinalShowcase 精确变换：UpperAudio_V04_2x4_TRS635 -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：UpperMidiUsb_V04_3xDIN_USB_C_Inline -- 冻结=1，实际=1
+- PASS: FinalShowcase 精确源路径：UpperMidiUsb_V04_3xDIN_USB_C_Inline -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperMidiUsb_V04_3xDIN_USB_C_Inline.SLDPRT
+- PASS: FinalShowcase 精确变换：UpperMidiUsb_V04_3xDIN_USB_C_Inline -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：UpperAdapterBlank_V04_95mm -- 冻结=1，实际=1
+- PASS: FinalShowcase 精确源路径：UpperAdapterBlank_V04_95mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\UpperAdapterBlank_V04_95mm.SLDPRT
+- PASS: FinalShowcase 精确变换：UpperAdapterBlank_V04_95mm -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：RearCarryHandle_V03_ClearanceFit -- 冻结=1，实际=1
+- PASS: FinalShowcase 精确源路径：RearCarryHandle_V03_ClearanceFit -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\RearCarryHandle_V03_ClearanceFit.SLDPRT
+- PASS: FinalShowcase 精确变换：RearCarryHandle_V03_ClearanceFit -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：CarryHandleSpreader_V07_6061_4mm -- 冻结=1，实际=1
+- PASS: FinalShowcase 精确源路径：CarryHandleSpreader_V07_6061_4mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\CarryHandleSpreader_V07_6061_4mm.SLDPRT
+- PASS: FinalShowcase 精确变换：CarryHandleSpreader_V07_6061_4mm -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：SideKickstand_V07_185mm_8x28 -- 冻结=2，实际=2
+- PASS: FinalShowcase 精确源路径：SideKickstand_V07_185mm_8x28 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\SideKickstand_V07_185mm_8x28.SLDPRT
+- PASS: FinalShowcase 精确变换：SideKickstand_V07_185mm_8x28 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：InternalLidCatch_V03 -- 冻结=4，实际=4
+- PASS: FinalShowcase 精确源路径：InternalLidCatch_V03 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\InternalLidCatch_V03.SLDPRT
+- PASS: FinalShowcase 精确变换：InternalLidCatch_V03 -- 4 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：FourBackFeet_V03 -- 冻结=1，实际=1
+- PASS: FinalShowcase 精确源路径：FourBackFeet_V03 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\FourBackFeet_V03.SLDPRT
+- PASS: FinalShowcase 精确变换：FourBackFeet_V03 -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：KickstandOuterCheek_V07_4mm -- 冻结=2，实际=2
+- PASS: FinalShowcase 精确源路径：KickstandOuterCheek_V07_4mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandOuterCheek_V07_4mm.SLDPRT
+- PASS: FinalShowcase 精确变换：KickstandOuterCheek_V07_4mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：KickstandPivotPin_V07_10mm -- 冻结=2，实际=2
+- PASS: FinalShowcase 精确源路径：KickstandPivotPin_V07_10mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandPivotPin_V07_10mm.SLDPRT
+- PASS: FinalShowcase 精确变换：KickstandPivotPin_V07_10mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：KickstandSpacer_V07_8p8mm_M5 -- 冻结=10，实际=10
+- PASS: FinalShowcase 精确源路径：KickstandSpacer_V07_8p8mm_M5 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandSpacer_V07_8p8mm_M5.SLDPRT
+- PASS: FinalShowcase 精确变换：KickstandSpacer_V07_8p8mm_M5 -- 10 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：KickstandLoadStopPin_V07_10mm -- 冻结=2，实际=2
+- PASS: FinalShowcase 精确源路径：KickstandLoadStopPin_V07_10mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandLoadStopPin_V07_10mm.SLDPRT
+- PASS: FinalShowcase 精确变换：KickstandLoadStopPin_V07_10mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：KickstandHeelInsert_V07 -- 冻结=2，实际=2
+- PASS: FinalShowcase 精确源路径：KickstandHeelInsert_V07 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandHeelInsert_V07.SLDPRT
+- PASS: FinalShowcase 精确变换：KickstandHeelInsert_V07 -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：KickstandFootPad_V07_Rubber -- 冻结=2，实际=2
+- PASS: FinalShowcase 精确源路径：KickstandFootPad_V07_Rubber -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandFootPad_V07_Rubber.SLDPRT
+- PASS: FinalShowcase 精确变换：KickstandFootPad_V07_Rubber -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：KickstandCaptiveIndexPin_V07_8mm -- 冻结=2，实际=2
+- PASS: FinalShowcase 精确源路径：KickstandCaptiveIndexPin_V07_8mm -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\KickstandCaptiveIndexPin_V07_8mm.SLDPRT
+- PASS: FinalShowcase 精确变换：KickstandCaptiveIndexPin_V07_8mm -- 2 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：DeepTravelLid_V07_StandRelief -- 冻结=1，实际=1
+- PASS: FinalShowcase 精确源路径：DeepTravelLid_V07_StandRelief -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\DeepTravelLid_V07_StandRelief.SLDPRT
+- PASS: FinalShowcase 精确变换：DeepTravelLid_V07_StandRelief -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 数量：DesktopReferenceSurface_V04 -- 冻结=1，实际=1
+- PASS: FinalShowcase 精确源路径：DesktopReferenceSurface_V04 -- C:\Users\LENOVO\Desktop\Rack4Modules\cad\parts\DesktopReferenceSurface_V04.SLDPRT
+- PASS: FinalShowcase 精确变换：DesktopReferenceSurface_V04 -- 1 个实例的 3x3 姿态矩阵和 XYZ 平移均匹配
+- PASS: FinalShowcase 内侧框中心面 x=±273 -- 实际 x=[273, -273] mm
+- PASS: FinalShowcase 8 mm 腿中心面 x=±279.4 -- 实际 x=[-279.4, 279.4] mm
+- PASS: FinalShowcase 外颊中心面 x=±285.8 -- 实际 x=[285.8, -285.8] mm
+- PASS: FinalShowcase Ø10 主轴中心面 x=±279.4 -- 实际 x=[279.4, -279.4] mm
+- PASS: FinalShowcase 10 个 8.8 mm 隔柱中心面 x=±279.4 -- 实际 x=[-279.4, -279.4, -279.4, 279.4, 279.4, 279.4, -279.4, 279.4, 279.4, -279.4] mm
+- PASS: FinalShowcase Ø10 止挡中心面 x=±279.4 -- 实际 x=[-279.4, 279.4] mm
+- PASS: FinalShowcase Ø8 固定索引销中心面 x=±281.8 -- 实际 x=[281.8, -281.8] mm
+- PASS: FinalShowcase 脚跟嵌片中心面 x=±279.4 -- 实际 x=[279.4, -279.4] mm
+- PASS: FinalShowcase 橡胶脚中心面 x=±279.4 -- 实际 x=[-279.4, 279.4] mm
+- PASS: FinalShowcase 提手加强板唯一且位于中央 -- 实际 x=[0] mm
+- PASS: FinalShowcase 外颊外表面 x=±287.8 -- 实际外侧坐标=[287.8, -287.8] mm
+- PASS: FinalShowcase 主轴端面 x=±287.8 -- 实际外侧坐标=[287.8, -287.8] mm
+- PASS: FinalShowcase 承力止挡端面 x=±287.8 -- 实际外侧坐标=[-287.8, 287.8] mm
+- PASS: FinalShowcase 锁销端面 x=±287.8 -- 实际外侧坐标=[287.8, -287.8] mm
+- PASS: FinalShowcase 两内侧框净宽 542 mm -- 右内表面减左内表面=542 mm
+- PASS: FinalShowcase 左侧主轴双剪同轴 -- 最大 YZ 偏差=0 mm；主轴至腿孔三维误差=0 mm
+- PASS: FinalShowcase 左侧Ø10 硬止挡双剪同轴 -- 最大 YZ 偏差=0 mm
+- PASS: FinalShowcase 左侧固定 Ø8 索引销与部署腿孔同轴 -- 最大 YZ 轴线偏差=0 mm；销轴向位置不要求与腿孔中心 X 相同
+- PASS: FinalShowcase 右侧主轴双剪同轴 -- 最大 YZ 偏差=0 mm；主轴至腿孔三维误差=0 mm
+- PASS: FinalShowcase 右侧Ø10 硬止挡双剪同轴 -- 最大 YZ 偏差=0 mm
+- PASS: FinalShowcase 右侧固定 Ø8 索引销与部署腿孔同轴 -- 最大 YZ 轴线偏差=0 mm；销轴向位置不要求与腿孔中心 X 相同
+- PASS: FinalShowcase 箱体 CAD 包络总宽 575.6 mm（排除桌面参考体与展示用分离盖） -- x=-287.8..287.8 mm，总宽=575.6 mm
+- PASS: FinalShowcase 壳体后缘桌面基准 Y=0/Z=0 -- 最大 Y/Z 误差=0 mm
+- PASS: FinalShowcase 模块面与桌面夹角 60° -- 实测变换角=60°
+- PASS: FinalShowcase 主轴理论桌面高度 -- 99.148 mm；冻结 99.1480577 mm
+- PASS: FinalShowcase 60° 部署相对转角 -- 87.753°；冻结 87.753280°
+- PASS: FinalShowcase 理论支撑深度 -- 153.988 mm；冻结 153.988309 mm
+- PASS: FinalShowcase 左侧腿铰点保持箱体轴位 -- 三维误差=0 mm
+- PASS: FinalShowcase 左侧主轴至橡胶脚中心 185 mm -- 185 mm
+- PASS: FinalShowcase 左侧橡胶脚最低点 Y=0 -- 解析最低 Y=0 mm；GetBox 仅作近似包络，不用于圆柱切点判定
+- PASS: FinalShowcase 左侧橡胶脚支撑中心位置 -- 中心 Y=13 mm，Z=153.988 mm；目标 (13,153.988) mm
+- PASS: FinalShowcase 左侧硬止挡/脚跟零间隙且无负干涉 -- 止挡腿局部 q=(-21,-38) mm；联合间隙=0 mm；脚跟间隙=0 mm
+- PASS: FinalShowcase 左侧脚跟嵌片随腿且位于切座 -- 实际相对中心=(-30,-38) mm；目标 (-30,-38) mm
+- PASS: FinalShowcase 左侧固定索引销与部署腿孔同轴 -- YZ 轴线误差=0 mm
+- PASS: FinalShowcase 右侧腿铰点保持箱体轴位 -- 三维误差=0 mm
+- PASS: FinalShowcase 右侧主轴至橡胶脚中心 185 mm -- 185 mm
+- PASS: FinalShowcase 右侧橡胶脚最低点 Y=0 -- 解析最低 Y=0 mm；GetBox 仅作近似包络，不用于圆柱切点判定
+- PASS: FinalShowcase 右侧橡胶脚支撑中心位置 -- 中心 Y=13 mm，Z=153.988 mm；目标 (13,153.988) mm
+- PASS: FinalShowcase 右侧硬止挡/脚跟零间隙且无负干涉 -- 止挡腿局部 q=(-21,-38) mm；联合间隙=0 mm；脚跟间隙=0 mm
+- PASS: FinalShowcase 右侧脚跟嵌片随腿且位于切座 -- 实际相对中心=(-30,-38) mm；目标 (-30,-38) mm
+- PASS: FinalShowcase 右侧固定索引销与部署腿孔同轴 -- YZ 轴线误差=0 mm
+- PASS: FinalShowcase 离散干涉结果全部分类 -- API=0，真实=0，电源违规=0，已知包装=0，参考体=0，接触=0
+- PASS: FinalShowcase 离散姿态未检出真实组件负体积干涉 -- 主轴、双剪颊板、8 x 28 mm 腿、止挡、固定索引销、脚跟嵌片、插接橡胶脚和提手加强板均纳入分类。
+- PASS: FinalShowcase STEP 临时副本可由 SOLIDWORKS 导入 -- importErrors=0；源文件=C:\Users\LENOVO\Desktop\Rack4Modules\exports\Rack4Modules_ShowcaseTilt60_LidOff_V07.STEP
+- PASS: FinalShowcase STEP 导入包含装配几何 -- 71 个组件
+
+## 必须保留的实物验证边界
+
+- WARNING: 整机质量、三维重心、摩擦和操作力尚未实测 -- 未以真实模块配置测量整机质量/三维 CG、桌面摩擦系数、20 N 解锁/折叠操作力，也未据此证明 1.5 稳定安全系数；不得记为 PASS。
+- WARNING: 规定载荷尚未完成实体试验 -- 400 N 单腿竖向载荷和 30 N 侧向载荷未在样机上施加；当前 CAD 与二维扫掠不等于承载认证。
+- WARNING: 10000 次疲劳寿命尚未验证 -- 主轴孔、锁销孔、硬止挡、脚跟嵌片、隔柱及紧固件尚未完成 10000 次折叠/锁止循环和松动复检。
+- WARNING: 主轴与锁销供应商件尚未冻结 -- Ø10 主轴/止挡和 Ø8 固定索引销仅按 CAD 包络检查；肩轴、轴套、弹簧、保持件、螺纹避开剪切面及供应商公差尚未确认。
+- WARNING: 橡胶脚机械卡持尚未设计验证 -- Ø26 x 8.4 mm 橡胶脚已加入插接槽包络，但橡胶包胶工艺、防拔脱强度、老化及更换方式尚未冻结。
+- WARNING: 实物公差链与加工装配尚未验证 -- 板厚、弯曲/切削、孔位、轴销、阳极层、装配间隙和左右侧同步误差需做完整公差链及首件实测。
+- WARNING: 连续 SOLIDWORKS 运动扫掠尚未执行 -- 本程序完成 2001 点理想二维截面扫掠，但没有替代包含倒角、紧固件、三维实体和装配公差的 SOLIDWORKS Motion/连续碰撞扫掠。
+
+## 汇总
+
+状态：**PASS**
+
+PASS: 773
+WARNING: 14
+FAIL: 0
