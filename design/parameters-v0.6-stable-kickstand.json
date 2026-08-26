@@ -1,0 +1,174 @@
+{
+  "project": "Rack4Modules",
+  "revision": "0.6.0-stable-positive-stop-kickstand",
+  "units": "mm",
+  "inherits": "parameters-v0.4-original-layout.json",
+  "scope": "single 60-degree desktop stance with captured double-shear legs, physical hard stops, reverse-fold lock pins and rubber feet; 3x104HP rails, no 1U, upper-edge interfaces, VESA and power reservations remain unchanged",
+  "eurorack_format_unchanged": {
+    "rows_3u": 3,
+    "hp_per_row": 104,
+    "row_1u_count": 0,
+    "rail_visible_length": 528.32,
+    "module_clear_internal_width": 542.0
+  },
+  "official_desktop_stance": {
+    "module_face_to_table_angle_deg": 60.0,
+    "additional_75_degree_assembly_generated": false,
+    "hinge_height_above_table": 99.1480577,
+    "leg_rotation_from_folded_deg": 92.4229565,
+    "rear_support_depth": 133.7697655,
+    "ideal_centered_boundary_margin": 66.8848828
+  },
+  "captured_side_stack": {
+    "count": 2,
+    "inner_frame": {
+      "part": "SideFrame_V06_StableDoubleShearInner",
+      "material": "6061-T6 aluminium",
+      "thickness": 3.0,
+      "center_x": [-272.5, 272.5],
+      "inner_surface_x": [-271.0, 271.0],
+      "outer_surface_x": [-274.0, 274.0]
+    },
+    "leg_cavity": {
+      "nominal_width": 6.8,
+      "leg_thickness": 6.0,
+      "nominal_clearance_each_side": 0.4,
+      "right_x_min": 274.0,
+      "right_x_max": 280.8,
+      "left_x_min": -280.8,
+      "left_x_max": -274.0
+    },
+    "outer_structural_cheek": {
+      "part": "KickstandOuterCheek_V06_Stable",
+      "material": "6061-T6 aluminium",
+      "thickness": 3.0,
+      "center_x": [-282.3, 282.3],
+      "inner_surface_x": [-280.8, 280.8],
+      "outer_surface_x": [-283.8, 283.8],
+      "main_y_range": [-170.0, 52.0],
+      "main_z_range": [24.0, 78.0],
+      "finger_access_at_foot_end": true,
+      "cover_lock_access_preserved": true
+    },
+    "nominal_body_width": 567.6,
+    "module_clear_width_affected": false,
+    "deep_lid_fit_static_cad_revalidated": true,
+    "surface_finish_and_tolerance_worst_case_width_frozen": false
+  },
+  "transport_lid": {
+    "part": "DeepTravelLid_V06_StandRelief",
+    "replaces_only_v04_transport_lid_in_v06_transport_assembly": true,
+    "material": "5052-H32",
+    "front_patch_clearance": 70.0,
+    "nominal_envelope_xyz": [552.0, 424.0, 83.5],
+    "side_return_relief_y_range": [-155.0, 41.0],
+    "side_return_relief_z_range": [5.0, 15.0],
+    "folded_leg_nominal_envelope_y": [-147.0, 33.0],
+    "folded_leg_nominal_envelope_z": [8.0, 70.0],
+    "static_discrete_interference_result": "0 pairs in Rack4Modules_TransportClosed_V06",
+    "continuous_motion_and_tolerance_revalidation_pending": true,
+    "v04_source_part_preserved": true
+  },
+  "folding_legs": {
+    "part": "SideKickstand_V06_170mm_6mm",
+    "count": 2,
+    "material": "7075-T6 aluminium plate",
+    "thickness_x": 6.0,
+    "arm_width_in_motion_plane": 18.0,
+    "root_diameter": 36.0,
+    "fixed_center_x": [-277.4, 277.4],
+    "pivot_case_y": -129.0,
+    "pivot_case_z": 52.0,
+    "pivot_to_foot_pad_center": 170.0,
+    "folded_leg_local_pivot_y": -75.0,
+    "folded_leg_local_pivot_z": 6.0,
+    "folded_leg_local_foot_center_y": 95.0,
+    "folded_leg_local_foot_center_z": 6.0
+  },
+  "pivot": {
+    "part": "KickstandPivotPin_V06_8mm",
+    "count": 2,
+    "nominal_diameter": 8.0,
+    "clearance_or_bushing_bore_target": 8.2,
+    "full_stack_length": 12.8,
+    "support": "double shear through inner frame and outer structural cheek",
+    "full_shank_across_both_shear_planes_required": true,
+    "thread_in_shear_plane_allowed": false,
+    "replaceable_flanged_bushing_required_for_prototype": true,
+    "axial_retention_supplier_frozen": false
+  },
+  "outer_cheek_spacers": {
+    "part": "KickstandSpacer_V06_6p8mm",
+    "count_total": 8,
+    "count_per_side": 4,
+    "length": 6.8,
+    "outside_diameter_target": 10.0,
+    "through_bore": 4.5,
+    "nominal_fastener": "M4",
+    "case_mount_centers_yz_per_side": [[-160.0, 39.0], [-160.0, 68.0], [-70.0, 34.0], [42.0, 34.0]],
+    "minimum_spacer_outer_circle_to_cheek_edge": 5.0,
+    "minimum_nominal_2d_sweep_clearance_required": 2.0,
+    "ideal_2001_point_minimum_clearance_target": 4.0,
+    "full_3d_tolerance_motion_sweep_pending": true,
+    "fastener_grade_torque_and_locking_method_frozen": false
+  },
+  "primary_load_stop": {
+    "pin_part": "KickstandLoadStopPin_V06_8mm",
+    "heel_part": "KickstandHeelInsert_V06",
+    "count_each": 2,
+    "pin_nominal_diameter": 8.0,
+    "pin_full_stack_length": 12.8,
+    "leg_local_pin_center_at_deployment": [14.0, -28.0],
+    "heel_insert_size_x_y_z": [6.0, 3.0, 16.0],
+    "contact_normal_moment_arm": 28.0,
+    "normal_downward_load_reacts_here": true,
+    "lock_pin_is_primary_load_stop": false
+  },
+  "reverse_fold_lock": {
+    "part": "KickstandLockPin_V06_5mm",
+    "count": 2,
+    "nominal_pin_diameter": 5.0,
+    "leg_hole_diameter": 5.2,
+    "plate_hole_diameter": 5.8,
+    "full_stack_length": 12.8,
+    "leg_local_center": [0.0, -38.0],
+    "function": "prevents reverse folding only after the heel is seated against the hard stop",
+    "spring_or_retention_supplier_frozen": false
+  },
+  "anti_slip_foot": {
+    "part": "KickstandFootPad_V06_Rubber",
+    "count": 2,
+    "material": "NEOPRENE CAD candidate",
+    "diameter": 16.0,
+    "axial_length": 6.0,
+    "deployed_center_height_above_table": 8.0,
+    "deployed_lowest_point_height_above_table": 0.0,
+    "durometer_friction_and_attachment_frozen": false
+  },
+  "engineering_screen_assumptions": {
+    "loaded_case_mass_kg": 20.0,
+    "horizontal_operating_force_n": 20.0,
+    "operating_force_height_mm": 300.0,
+    "stability_safety_factor": 1.5,
+    "required_cg_boundary_margin_mm": 45.87,
+    "preliminary_longitudinal_cg_window_from_support_midpoint_mm": [-20.0, 20.0],
+    "single_leg_secondary_load_n": 400.0,
+    "hard_stop_load_factor": 1.5,
+    "screened_heel_stop_reaction_kn": 3.64,
+    "side_impact_screen_n": 30.0,
+    "screen_is_not_structural_certification": true
+  },
+  "validation_boundaries": [
+    "Static CAD geometry does not certify stand strength, stability, friction, fatigue, drop resistance or pinch safety.",
+    "The fully populated case requires a measured three-dimensional centre of gravity and measured support polygon before release.",
+    "The complete folded-to-60-degree sweep must be checked again after production bushings, fasteners, lock retention and tolerances are frozen.",
+    "The final shoulder axle, bushings, washers, spacers, stop pin, heel insert, reverse-fold lock and anti-slip feet require supplier drawings and physical prototypes.",
+    "Worst-case tolerance must include plate thickness, machining, anodizing, flatness, bushing fit, dirt and assembly preload.",
+    "A prototype must pass static hold, single-leg and lateral loading, friction, repeated folding, fatigue, pinch, misuse and drop tests before the stand is called physically stable."
+  ],
+  "official_reference_urls": [
+    "https://intellijel.com/shop/cases/7u/7u-performance-case-gen-2/",
+    "https://intellijel.com/downloads/manuals/7u/7u-performance-case-gen-2_manual_2026.04.13.pdf"
+  ],
+  "reference_evidence_boundary": "Official Intellijel sources confirm two legs stored in the side panels, a separate spring-loaded Stand Lock and two supported positions; they do not prove the Rack4Modules double-shear stack, single 60-degree stance, axle dimensions, 7075-T6 leg, positive-stop geometry or load capacity."
+}

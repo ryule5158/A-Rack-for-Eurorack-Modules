@@ -1,0 +1,70 @@
+{
+  "project": "Rack4Modules",
+  "revision": "0.3.0",
+  "layout_reference": "Intellijel 7U Performance Case Gen-2 primary, Befaco 7U Case secondary",
+  "units": "mm",
+  "body": {
+    "width": 548.0,
+    "height": 420.0,
+    "depth": 110.0,
+    "rear_edge_inner_width": 542.0,
+    "rear_edge_depth": 108.0,
+    "broad_back_reserved_for_vesa": true
+  },
+  "rear_edge_zones": {
+    "audio_plate": {
+      "center_x": -164.0,
+      "width": 200.0,
+      "depth": 80.0,
+      "z_start": 15.0,
+      "trs_count": 8,
+      "trs_pitch": 22.0,
+      "trs_hole_diameter": 11.2,
+      "trs_center_z": 55.0
+    },
+    "carry_handle": {
+      "center_x": 0.0,
+      "reserved_width": 128.0,
+      "mount_pitch": 110.0,
+      "grip_width": 126.0
+    },
+    "midi_usb_plate": {
+      "center_x": 139.0,
+      "width": 150.0,
+      "depth": 80.0,
+      "z_start": 15.0,
+      "din5_count": 3,
+      "din5_hole_diameter": 15.0,
+      "usb": "one USB-C mechanical opening"
+    },
+    "power_blank_plate": {
+      "center_x": 239.0,
+      "width": 50.0,
+      "depth": 80.0,
+      "z_start": 15.0,
+      "connector_holes": 0
+    }
+  },
+  "side_features": {
+    "folding_leg_count": 2,
+    "leg_positions": "recessed in left and right short side panels",
+    "leg_centers_x": [-271.0, 271.0],
+    "folded_leg_center_y": -56.0,
+    "internal_lid_catch_centers_x": [-272.0, 272.0],
+    "leg_angles_deg": [15, 30],
+    "internal_lid_catch_count": 4
+  },
+  "broad_back": {
+    "vesa_pattern": "100 x 100 M4",
+    "signal_connector_count": 0,
+    "power_connector_count": 0,
+    "vent_opening_count": 0,
+    "rubber_foot_count": 4
+  },
+  "lower_edge": {
+    "passive_vent_groups": 2,
+    "slots_per_group": 8,
+    "joiner_slot_count": 2
+  },
+  "electrical_boundary": "All connector apertures are mechanical provisions only. No audio, MIDI, USB or power electronics are implied."
+}

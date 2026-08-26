@@ -1,0 +1,290 @@
+{
+  "project": "Rack4Modules",
+  "revision": "0.4.0-original-layout",
+  "units": "mm",
+  "supersedes_for_layout": [
+    "parameters-v0.3.json",
+    "parameters-v0.3-fabrication.json"
+  ],
+  "format": {
+    "rows_3u": 3,
+    "hp_per_row": 104,
+    "row_1u_count": 0
+  },
+  "materials": {
+    "deep_lid": "5052-H32 aluminium",
+    "deep_lid_thickness": 1.5,
+    "main_body": "5052-H32 aluminium",
+    "main_body_thickness": 2.0,
+    "side_frames": "6061-T6 aluminium",
+    "side_frame_thickness": 3.0
+  },
+  "body": {
+    "width": 548.0,
+    "height": 420.0,
+    "depth": 110.0,
+    "rear_edge_inner_x_min": -271.0,
+    "rear_edge_inner_x_max": 271.0,
+    "replaceable_panel_z_min": 15.0,
+    "replaceable_panel_z_max": 95.0
+  },
+  "structural_eurorack_rails": {
+    "count": 6,
+    "length_hp": 104,
+    "nominal_length": 528.32,
+    "profile_material": "anodized structural aluminium extrusion",
+    "threaded_strip_material": "AISI 304 stainless steel",
+    "module_thread": "M3",
+    "module_thread_horizontal_pitch": 5.08,
+    "module_threaded_strip_role": "module panel attachment only",
+    "rail_end_structural_fastener": "M4",
+    "structural_fasteners_per_end": 1,
+    "ends_per_rail": 2,
+    "total_rail_end_m4_structural_fasteners": 12,
+    "rail_m4_tap_pilot_diameter": 3.3,
+    "rail_m4_axis_z": 16.0,
+    "side_frame_m4_clearance_hole_diameter": 4.5,
+    "rail_end_locator": "M3",
+    "locators_per_end": 1,
+    "total_rail_end_m3_locators": 12,
+    "side_frame_m3_locator_clearance_hole_diameter": 3.4,
+    "rail_m3_locator_axis_z": 6.0,
+    "m3_locator_role": "location and anti-rotation only; separate from the M4 structural clamp and the M3 module strip",
+    "reference_competitor_fastener_length": "M4 x 12 mm",
+    "target_end_thread_engagement_min": 5.6,
+    "target_end_thread_engagement_max": 8.0,
+    "anti_rotation": "one independent M3 locator at each rail end",
+    "anti_loosening": "serviceable threadlocker or equivalent locking fastener; final method requires prototype confirmation",
+    "structural_load_path": "module / M3 304 strip / aluminium rail / M4 end fixing / 3 mm side frame / main shell; M3 locator prevents rotation but is not the primary clamp",
+    "final_fastener_length_depends_on_profile_and_side_frame": true,
+    "strength_and_fatigue_verified": false
+  },
+  "vesa_direct_back_shell_mount": {
+    "pattern": "100 x 100",
+    "hole_count": 4,
+    "hole_center_x": [-50.0, 50.0],
+    "hole_center_y": [-50.0, 50.0],
+    "fastener_thread": "M4",
+    "shell_clearance_hole_diameter": 4.5,
+    "mounting_surface": "2.0 mm 5052-H32 broad back shell",
+    "direct_back_shell_holes": true,
+    "full_surface_cover_plate": false,
+    "separate_large_vesa_reinforcement_plate": false,
+    "local_tapped_bridges": {
+      "count": 2,
+      "material": "6061-T6 aluminium",
+      "length": 240.0,
+      "width": 10.0,
+      "thickness": 9.0,
+      "center_x": 0.0,
+      "center_y": [-50.0, 50.0],
+      "thread": "M4",
+      "tap_pilot_diameter": 3.3,
+      "hole_center_x": [-50.0, 50.0]
+    },
+    "fastener_stack": "M4 screw passes through the VESA mount and the 2 mm shell 4.5 mm clearance hole, then threads into the local bridge M4 tapped hole",
+    "washer_selection_frozen": false,
+    "thread_locking_method_frozen": false,
+    "load_transfer": "four local M4 tapped joints into two narrow bridges and the existing structural frame; no full-size backing plate",
+    "final_loaded_mass_arm_moment_pullout_washer_and_thread_lock_verified": false
+  },
+  "upper_rear_edge_original_layout": {
+    "order_left_to_right": [
+      "external_power_adapter_blank",
+      "midi_usb_single_row",
+      "single_central_handle",
+      "audio_trs_4x2"
+    ],
+    "upper_joiner_accessory_slots": {
+      "required": false,
+      "count": 0,
+      "left_slot_removed": true,
+      "right_slot_removed": true,
+      "reason": "preserve the complete power blank and uninterrupted original upper-edge structure",
+      "existing_lower_edge_slots_modified": false,
+      "third_party_joiner_compatibility_claimed": false
+    },
+    "external_power_adapter_blank": {
+      "center_x": -218.5,
+      "width": 95.0,
+      "depth": 80.0,
+      "x_min": -266.0,
+      "x_max": -171.0,
+      "z_min": 15.0,
+      "z_max": 95.0,
+      "connector_holes": 0,
+      "internal_connector_and_wiring_reserve_min": 45.0,
+      "internal_connector_and_wiring_reserve_max": 60.0,
+      "external_plug_and_cable_reserve": 70.0,
+      "adapter_model_frozen": false,
+      "connector_family_frozen": false,
+      "power_topology_frozen": false
+    },
+    "midi_usb_single_row": {
+      "center_x": -116.0,
+      "width": 100.0,
+      "depth": 80.0,
+      "x_min": -166.0,
+      "x_max": -66.0,
+      "z_min": 15.0,
+      "z_max": 95.0,
+      "panel_local_x_min": -50.0,
+      "panel_local_x_max": 50.0,
+      "panel_local_z_min": 0.0,
+      "panel_local_z_max": 80.0,
+      "layout": "three DIN-5 plus one USB-C in one horizontal row",
+      "main_aperture_centers_frozen": true,
+      "candidate_centers_local_xz": {
+        "midi_in_din5": [-34.0, 40.0],
+        "midi_out_din5": [-10.0, 40.0],
+        "midi_thru_din5": [14.0, 40.0],
+        "usb_c": [39.0, 40.0]
+      },
+      "candidate_centers_global_xz": {
+        "midi_in_din5": [-150.0, 55.0],
+        "midi_out_din5": [-126.0, 55.0],
+        "midi_thru_din5": [-102.0, 55.0],
+        "usb_c": [-77.0, 55.0]
+      },
+      "din5_vertical_mounting_ears": {
+        "orientation": "mounting holes aligned along z",
+        "mounting_hole_offset_from_main_center_z": [-11.1, 11.1],
+        "mounting_hole_global_z": [43.9, 66.1],
+        "does_not_expand_candidate_local_x_pitch": true,
+        "mounting_hole_centers_frozen": true,
+        "main_hole_diameter_frozen": false,
+        "mounting_hole_diameter_frozen": false,
+        "flange_outline_frozen": false
+      },
+      "usb_c_vertical_mounting_holes": {
+        "orientation": "mounting holes aligned along z",
+        "current_mechanical_reserve_offset_from_center_z": [-10.0, 10.0],
+        "current_mechanical_reserve_local_z": [30.0, 50.0],
+        "current_mechanical_reserve_global_z": [45.0, 65.0],
+        "status": "provisional mechanical carrier holes only",
+        "mounting_hole_pitch_frozen": false,
+        "mounting_hole_diameter_frozen": false,
+        "supplier_flange_frozen": false,
+        "flange_outline_frozen": false
+      },
+      "usb_c_candidate_right_boundary_local_x": 45.0,
+      "usb_c_candidate_right_boundary_global_x": -71.0,
+      "right_edge_margin": 5.0,
+      "connector_supplier_frozen": false,
+      "connector_part_numbers_frozen": false,
+      "hole_shapes_frozen": false
+    },
+    "single_central_handle": {
+      "count": 1,
+      "center_x": 0.0,
+      "reserved_width": 128.0,
+      "x_min": -64.0,
+      "x_max": 64.0,
+      "grip_width": 126.0,
+      "mount_pitch": 110.0,
+      "side_handles": 0
+    },
+    "audio_trs_4x2": {
+      "center_x": 165.0,
+      "width": 186.0,
+      "depth": 80.0,
+      "x_min": 72.0,
+      "x_max": 258.0,
+      "z_min": 15.0,
+      "z_max": 95.0,
+      "trs635_count": 8,
+      "candidate_center_x": [105.0, 145.0, 185.0, 225.0],
+      "candidate_center_z": [37.0, 73.0],
+      "array": "4 columns x 2 rows",
+      "hole_diameter_frozen": false
+    },
+    "nominal_gaps": {
+      "left_inner_edge_to_power_blank": 5.0,
+      "power_blank_to_midi_usb": 5.0,
+      "midi_usb_to_handle_reserve": 2.0,
+      "handle_reserve_to_audio": 8.0,
+      "audio_to_right_inner_edge": 13.0
+    }
+  },
+  "side_ventilation": {
+    "side_count": 2,
+    "slots_per_side": 8,
+    "slot_shape": "obround",
+    "slot_long_axis": "y",
+    "slot_length": 18.0,
+    "slot_width": 4.0,
+    "slot_end_radius": 2.0,
+    "slot_center_y": [-120.0, -96.0, -72.0, -48.0, 48.0, 72.0, 96.0, 120.0],
+    "slot_center_z": 82.0,
+    "nominal_open_area_per_slot_mm2": 68.57,
+    "nominal_open_area_per_side_mm2": 548.53,
+    "nominal_open_area_both_sides_mm2": 1097.06,
+    "thermal_performance_verified": false,
+    "structural_performance_verified": false,
+    "ingress_or_emc_rating_claimed": false
+  },
+  "two_stage_folding_legs": {
+    "count": 2,
+    "folded_center_x": [-271.0, 271.0],
+    "folded_center_y": -54.0,
+    "component_placement_origin_z": 46.0,
+    "folded_arm_center_z": 52.0,
+    "component_origin_to_arm_center_z_offset": 6.0,
+    "lower_pivot_y": -129.0,
+    "lower_pivot_z": 52.0,
+    "pivot_boss_diameter": 16.0,
+    "side_pocket_lower_y": -137.0,
+    "arm_length": 150.0,
+    "arm_width_x": 6.0,
+    "arm_depth_z": 12.0,
+    "axial_pop_out_before_rotation": 7.0,
+    "deployed_center_x": [-278.0, 278.0],
+    "folded_total_width": 548.0,
+    "deployed_total_width": 562.0,
+    "positions": [
+      {
+        "module_face_to_table_angle_deg": 60.0,
+        "leg_rotation_from_folded_up_deg": 101.38,
+        "rear_support_distance_from_body_rear_lower_contact": 102.83
+      },
+      {
+        "module_face_to_table_angle_deg": 75.0,
+        "leg_rotation_from_folded_up_deg": 113.44,
+        "rear_support_distance_from_body_rear_lower_contact": 82.43
+      }
+    ],
+    "kinematic_sequence": [
+      "axially_pop_out_7_mm",
+      "rotate_to_locked_detent",
+      "load_only_after_both_legs_are_locked"
+    ],
+    "geometry_status": "design intent only",
+    "axial_pop_out_and_deployed_width_status": "7 mm pop-out and approximately 562 mm deployed width are design targets only",
+    "continuous_swept_interference_verified": false,
+    "physical_deployment_verified": false,
+    "load_stability_fatigue_and_tip_resistance_verified": false
+  },
+  "known_boundaries": [
+    "Both nonessential upper-edge joiner slots are cancelled and absent; existing lower-edge slots are unchanged.",
+    "Power adapter, inlet connector, switch, protection, grounding, wiring, polarity and internal power electronics are not selected.",
+    "DIN-5 and USB-C main aperture centers are frozen packaging coordinates; production aperture shapes require the selected supplier drawings.",
+    "The USB-C carrier holes at z +/-10 mm are provisional mechanical reserves; supplier flange and mounting holes are not frozen.",
+    "The 60 and 75 degree leg positions, 7 mm axial pop-out and approximately 562 mm deployed width are design targets; continuous swept interference and physical deployment are not validated.",
+    "The side slots do not prove cooling, ingress protection, EMC safety, touch safety or side-frame strength.",
+    "VESA direct-shell and tapped-bridge loading, washer and thread-lock choice, local pullout, mounting-arm moment, rail-end anti-rotation and transport fatigue require physical validation."
+  ],
+  "official_reference_urls": [
+    "https://intellijel.com/shop/cases/7u/7u-performance-case-gen-2/",
+    "https://intellijel.com/downloads/manuals/7u-performance-case-gen-2_manual_2026.04.13.pdf",
+    "https://www.befaco.org/befaco_7u_case/",
+    "https://tiptopaudio.com/mantis/",
+    "https://tiptopaudio.com/z-rails/",
+    "https://tiptopaudio.com/support/",
+    "https://doepfer.de/a100_man/A100_DIY_Kits.pdf",
+    "https://media.bossard.com/nl-en/-/media/bossard-group/website/documents/technical-resources/en/f-039-en.pdf",
+    "https://www.meanwell.com/Upload/PDF/GSM90A/GSM90A-SPEC.PDF",
+    "https://www.switchcraft.com/dc-power-jack-0-100-2-5mm-pin-solder-lugs-termination/712a/",
+    "https://www.switchcraft.com/2-5mm-pin-meter-5-5mm-bushing-length-temp-max-105-c-7-5a/712rahlp/",
+    "https://www.neutrik.com/en/product/nc4fd-lx"
+  ]
+}

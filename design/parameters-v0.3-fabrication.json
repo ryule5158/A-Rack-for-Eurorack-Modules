@@ -1,0 +1,53 @@
+{
+  "project": "Rack4Modules",
+  "revision": "0.3.1-fabrication-clearance",
+  "units": "mm",
+  "base_layout": "parameters-v0.3.json",
+  "design_intent": "Reference-aligned Eurorack performance case with corrected fit and truthful local depth reservations.",
+  "external_envelope": {
+    "body_width": 548.0,
+    "maximum_left_x": -274.0,
+    "maximum_right_x": 274.0,
+    "body_height": 420.0,
+    "body_depth": 110.0
+  },
+  "rear_edge": {
+    "audio_plate_center_x": -164.0,
+    "audio_trs635_global_x": [-241.0, -219.0, -197.0, -175.0, -153.0, -131.0, -109.0, -87.0],
+    "audio_trs635_global_z": 55.0,
+    "carry_handle_center_x": 0.0,
+    "carry_handle_mount_pitch": 110.0,
+    "carry_handle_grip_width": 126.0,
+    "carry_handle_reserved_width": 128.0,
+    "carry_handle_side_clearance": 1.0,
+    "midi_usb_plate_center_x": 139.0,
+    "din5_global_x": [87.0, 121.0, 155.0],
+    "usb_c_global_x": 191.0,
+    "midi_usb_global_z": 55.0,
+    "power_blank_plate_center_x": 239.0,
+    "power_connector_holes": 0
+  },
+  "side_features": {
+    "left_folded_leg_center_x": -271.0,
+    "right_folded_leg_center_x": 271.0,
+    "folded_leg_center_y": -56.0,
+    "left_internal_lid_catch_center_x": -272.0,
+    "right_internal_lid_catch_center_x": 272.0,
+    "internal_lid_catch_count": 4,
+    "external_protrusion": 0.0
+  },
+  "module_depth": {
+    "normal_unobstructed_depth": 85.0,
+    "distributed_power_bus_zone_depth": 73.0,
+    "central_power_supply_zone_depth": 60.0,
+    "power_note": "No power supply topology, mounting holes, electronics or full-area 85 mm depth are frozen."
+  },
+  "broad_back": {
+    "vesa_pattern": "100 x 100 M4",
+    "feet": 4,
+    "signal_connector_holes": 0,
+    "power_connector_holes": 0,
+    "ventilation_holes": 0
+  },
+  "validation_boundary": "Mechanical CAD intent only; mass, load capacity, lid hardware, connector SKU fit, EMC and safety require separate verification."
+}

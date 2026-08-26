@@ -1,0 +1,135 @@
+{
+  "project": "Rack4Modules",
+  "revision": "0.5.0-captured-double-shear-stand",
+  "units": "mm",
+  "inherits": "parameters-v0.4-original-layout.json",
+  "scope": "folding-stand side-stack only; 3x104HP rails, upper-edge interfaces, VESA and power reservations remain V0.4",
+  "eurorack_format_unchanged": {
+    "rows_3u": 3,
+    "hp_per_row": 104,
+    "row_1u_count": 0,
+    "rail_visible_length": 528.32,
+    "module_clear_internal_width": 542.0
+  },
+  "captured_side_stack": {
+    "count": 2,
+    "inner_frame": {
+      "part": "SideFrame_V05_Vented_DoubleShearInner",
+      "material": "6061-T6 aluminium",
+      "thickness": 3.0,
+      "center_x": [-272.5, 272.5],
+      "inner_surface_x": [-271.0, 271.0],
+      "outer_surface_x": [-274.0, 274.0],
+      "former_164x22_leg_slot_removed": true,
+      "pivot_material_restored": true
+    },
+    "leg_cavity": {
+      "nominal_width": 4.8,
+      "leg_thickness": 4.0,
+      "nominal_clearance_each_side": 0.4,
+      "right_x_min": 274.0,
+      "right_x_max": 278.8,
+      "left_x_min": -278.8,
+      "left_x_max": -274.0
+    },
+    "outer_structural_cheek": {
+      "part": "KickstandOuterCheek_V05_3mm",
+      "material": "6061-T6 aluminium",
+      "thickness": 3.0,
+      "center_x": [-280.3, 280.3],
+      "inner_surface_x": [-278.8, 278.8],
+      "outer_surface_x": [-281.8, 281.8],
+      "covers_folded_leg_projection": true,
+      "finger_access_at_foot_end": true,
+      "cover_lock_access_preserved": true
+    },
+    "nominal_body_width": 563.6,
+    "module_clear_width_affected": false,
+    "deep_lid_fit_must_be_revalidated": true,
+    "surface_finish_and_tolerance_worst_case_width_frozen": false
+  },
+  "folding_legs": {
+    "part": "SideKickstand_V05_DoubleShear150mm",
+    "count": 2,
+    "material": "6061-T6 aluminium",
+    "thickness_x": 4.0,
+    "arm_width_in_motion_plane": 18.0,
+    "root_minimum_width_target": 32.0,
+    "root_transition_radius_target_min": 8.0,
+    "fixed_center_x": [-276.4, 276.4],
+    "component_folded_origin_y": -54.0,
+    "component_folded_origin_z": 46.0,
+    "pivot_case_y": -129.0,
+    "pivot_case_z": 52.0,
+    "pivot_to_foot_contact": 150.0,
+    "axial_pop_out_before_rotation": 0.0,
+    "positions": [
+      {
+        "module_face_to_table_angle_deg": 60.0,
+        "leg_rotation_from_folded_deg": 101.375194,
+        "rear_support_distance_mm": 102.830123
+      },
+      {
+        "module_face_to_table_angle_deg": 75.0,
+        "leg_rotation_from_folded_deg": 113.438676,
+        "rear_support_distance_mm": 82.431744
+      }
+    ]
+  },
+  "pivot": {
+    "part": "KickstandPivotPin_V05_Flush",
+    "count": 2,
+    "nominal_diameter": 8.0,
+    "clearance_or_bushing_bore_target": 8.2,
+    "stack_length": 10.8,
+    "support": "double shear through inner frame and outer structural cheek",
+    "full_shank_across_both_shear_planes_required": true,
+    "thread_in_shear_plane_allowed": false,
+    "replaceable_flanged_bushing_required_for_prototype": true,
+    "axial_retention_supplier_frozen": false
+  },
+  "outer_cheek_spacers": {
+    "part": "KickstandSpacer_V05_4p8mm",
+    "count_total": 8,
+    "count_per_side": 4,
+    "length": 4.8,
+    "outside_diameter_target": 10.0,
+    "fastener_clearance_target": "M4 or M5 after joint calculation",
+    "at_least_two_per_side_near_pivot": true,
+    "fastener_and_locking_method_frozen": false
+  },
+  "positive_indexing": {
+    "part": "KickstandIndexPin_V05_SpringEnvelope",
+    "count": 2,
+    "independent_from_pivot": true,
+    "folded_and_two_deployed_positions_required": true,
+    "spring_return_required": true,
+    "visible_full_engagement_feedback_required": true,
+    "friction_only_retention_allowed": false,
+    "supplier_and_final_pin_diameter_frozen": false,
+    "load_bearing_hard_stops_required": true,
+    "index_pin_must_not_be_the_only_load_stop": true
+  },
+  "engineering_screen_assumptions": {
+    "loaded_case_mass_kg": 20.0,
+    "use_shock_factor": 2.0,
+    "single_leg_load_share": 0.7,
+    "single_leg_screen_load_n": 300.0,
+    "single_leg_secondary_load_n": 400.0,
+    "side_impact_screen_n": 30.0,
+    "screen_is_not_structural_certification": true
+  },
+  "validation_boundaries": [
+    "Static CAD geometry does not certify stand strength, stability, fatigue, drop resistance or pinch safety.",
+    "The complete folded-to-60-degree and folded-to-75-degree swept motion must be checked after the hard-stop and production lock geometry are frozen.",
+    "The final shoulder axle, bushings, washers, spacers, stop faces, index mechanism, anti-slip feet and fastener locking method require supplier drawings and physical prototypes.",
+    "Worst-case tolerance must include plate thickness, machining, anodizing, flatness, bushing fit, dirt and assembly preload.",
+    "A fully populated case must retain at least 20 mm centre-of-gravity projection margin inside the measured support polygon before either angle is released for use."
+  ],
+  "official_reference_urls": [
+    "https://intellijel.com/shop/cases/7u/7u-performance-case-gen-2/",
+    "https://intellijel.com/downloads/manuals/7u-performance-case-gen-2_manual_2026.04.13.pdf",
+    "https://www.youtube.com/watch?v=q_PrRrfRy2I&t=42s"
+  ],
+  "reference_evidence_boundary": "Official Intellijel sources confirm legs hidden in side panels, a spring stand lock and two positions; they do not prove double-shear construction, exact axle geometry, load capacity or the Rack4Modules 60/75 degree angles."
+}
