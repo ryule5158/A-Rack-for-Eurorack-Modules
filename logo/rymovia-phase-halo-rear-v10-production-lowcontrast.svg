@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-274 -210 548 420" fill="none">
+  <title>Rymovia Phase Halo rear-panel production intent V0.10</title>
+  <desc>Low-contrast one-colour production master. Supplier must preserve the declared structural keep-outs and qualify the finish on a process coupon.</desc>
+  <!-- Finished size: 548 x 420 mm.  Do not scale.  Preferred visual contrast:
+       12-18 percent on matte graphite.  A supplier coupon and adhesion/abrasion
+       test are required before production release. -->
+  <g id="phase-halo" transform="scale(1,-1)" stroke="#D8D8D8" stroke-linecap="round" stroke-linejoin="round">
+    <g id="row-a-inner" stroke-width="0.65" opacity="0.28">
+      <path d="M-30 120H-104 Q-138 120-138 86V28"/>
+      <path d="M22 120H104 Q138 120 138 86V42"/>
+      <path d="M138-18V-86 Q138-120 104-120H36"/>
+      <path d="M-20-120H-104 Q-138-120-138-86V-34"/>
+    </g>
+    <g id="row-b-middle" stroke-width="0.55" opacity="0.235">
+      <path d="M-58 150H-130 Q-176 150-176 104V48"/>
+      <path d="M38 150H130 Q176 150 176 104V28"/>
+      <path d="M176-46V-104 Q176-150 130-150H52"/>
+      <path d="M-40-150H-130 Q-176-150-176-104V-54"/>
+    </g>
+    <g id="row-c-outer" stroke-width="0.45" opacity="0.19">
+      <path d="M-92 178H-162 Q-218 178-218 122V70"/>
+      <path d="M74 178H162 Q218 178 218 122V64"/>
+      <path d="M218-68V-122 Q218-178 162-178H92"/>
+      <path d="M-76-178H-162 Q-218-178-218-122V-60"/>
+    </g>
+    <g id="structural-echo-calibration" stroke-width="0.35" opacity="0.16">
+      <path d="M-252 155H-228 M228 155H252 M-252-155H-228 M228-155H252"/>
+      <path d="M-115 184V190 M115 184V190 M-115-184V-190 M115-184V-190"/>
+      <path d="M-12 184V190 M0 182V190 M12 184V190 M-12-184V-190 M0-182V-190 M12-184V-190"/>
+      <path d="M-252-12H-246 M-252 0H-244 M-252 12H-246 M246-12H252 M244 0H252 M246 12H252"/>
+    </g>
+  </g>
+  <g id="non-printing-keepouts" display="none" fill="none" stroke="#FF0000" stroke-width="0.2">
+    <rect x="-258" y="-194" width="516" height="388"/>
+    <rect x="-90" y="-90" width="180" height="180"/>
+    <circle cx="-245" cy="-185" r="12"/><circle cx="245" cy="-185" r="12"/>
+    <circle cx="-245" cy="185" r="12"/><circle cx="245" cy="185" r="12"/>
+  </g>
+</svg>

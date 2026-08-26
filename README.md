@@ -1,10 +1,10 @@
 # Rack4Modules：3×104HP 原创 Eurorack 机箱
 
-本项目当前设计入口为 **V0.9 Rymovia 外观 / 四点锁盖版**。它保持 3 排 3U、每排
+本项目当前设计入口为 **V0.10 Rymovia 外观 / 四点锁盖 / 背板相位回廊版**。它保持 3 排 3U、每排
 104HP、没有 1U 行，以及 `542 mm` 模块安装内净宽；在 V0.7 薄壁承力基线之上加入
-Rymovia Time Grid 外盖图案、真实钻孔深盖、四点过中心锁扣安装结构、硬止挡与 EPDM 预压。
+Rymovia Time Grid 外盖图案、背板 Phase Halo 图案、真实钻孔深盖、四点过中心锁扣安装结构、硬止挡与 EPDM 预压。
 
-第一次打开项目，请先看 [V0.9 零基础打开与检查说明](START_HERE_V09.md)。V0.7 的结构与
+第一次打开项目，请先看 [V0.10 零基础打开与检查说明](START_HERE_V10.md)。V0.7 的结构与
 减重验证仍见 `docs/strength-weight-audit-v07.md` 和 `reports/layout-v07-validation.md`；
 V0.9 当前有成功生成记录，但尚未把实体样机试验或最终供应商锁扣 STEP 复核当作已完成。
 
@@ -12,15 +12,33 @@ V0.9 当前有成功生成记录，但尚未把实体样机试验或最终供应
 
 | 用途 | SOLIDWORKS 总装 |
 | --- | --- |
-| 最终展示：60°工作姿态，盖子单独放在旁边 | `cad/assemblies/Rack4Modules_ShowcaseTilt60_LidOff_V09_RymoviaSecureLid.SLDASM` |
-| 正常开箱、主要编辑入口 | `cad/assemblies/Rack4Modules_OpenCase_V09_RymoviaSecureLid.SLDASM` |
-| 合盖运输状态 | `cad/assemblies/Rack4Modules_TransportClosed_V09_RymoviaSecureLid.SLDASM` |
-| 模块安装与内部避让检查 | `cad/assemblies/Rack4Modules_ClearanceCheck_V09_RymoviaSecureLid.SLDASM` |
-| 正式桌面支撑姿态，模块面相对桌面约 60° | `cad/assemblies/Rack4Modules_DesktopTilt60_V09_RymoviaSecureLid.SLDASM` |
+| 最终展示：背板相位回廊、60°工作姿态和拆下盖子同屏 | `cad/assemblies/Rack4Modules_ExteriorIdentityShowcase_V10_RymoviaPhaseHalo.SLDASM` |
+| 最终展示：60°工作姿态，盖子单独放在旁边 | `cad/assemblies/Rack4Modules_ShowcaseTilt60_LidOff_V10_RymoviaPhaseHaloRear.SLDASM` |
+| 正常开箱、主要编辑入口 | `cad/assemblies/Rack4Modules_OpenCase_V10_RymoviaPhaseHaloRear.SLDASM` |
+| 合盖运输状态 | `cad/assemblies/Rack4Modules_TransportClosed_V10_RymoviaPhaseHaloRear.SLDASM` |
+| 模块安装与内部避让检查 | `cad/assemblies/Rack4Modules_ClearanceCheck_V10_RymoviaPhaseHaloRear.SLDASM` |
+| 正式桌面支撑姿态，模块面相对桌面约 60° | `cad/assemblies/Rack4Modules_DesktopTilt60_V10_RymoviaPhaseHaloRear.SLDASM` |
 
-建议只想看成品时打开 `Rack4Modules_ShowcaseTilt60_LidOff_V09_RymoviaSecureLid.SLDASM`。该展示总装故意把
-深盖移到机箱旁边，既能看见盖子，也不会遮挡三排模块安装区域；盖子是否适合运输仍应在
-`TransportClosed` 总装及实体样机中检查。
+建议只想看成品时打开 `Rack4Modules_ExteriorIdentityShowcase_V10_RymoviaPhaseHalo.SLDASM`。
+该展示总装把一个背板外表面展示副本放在左侧、完整 60°箱体放在中间、深盖放在右侧；副本只用于
+说明背板图案，不计入 BOM 或质量。盖子是否适合运输仍应在 `TransportClosed` 总装及实体样机中检查。
+
+## V0.10 背板外观：Rymovia Phase Halo / Structural Echo
+
+这次用户选定了概念板 A。背板不再只是一块无标识的黑板，而是用三层断开的圆角相位轨迹形成
+与盖子 Time Grid 互补的“时间轴 / 反馈场”视觉系统：盖子表达离散时间，背板表达相位回廊。
+图案不重复放大 Logo、不模拟 PCB、不使用霓虹或游戏化纹理；外围少量校准短线暗示真实的后部承力路径。
+
+- 背板原生零件：`cad/parts/BackPanel_V10_5052_RymoviaPhaseHalo.SLDPRT`
+- 生产矢量母版：`logo/rymovia-phase-halo-rear-v10.svg`
+- 低反差量产意图：`logo/rymovia-phase-halo-rear-v10-production-lowcontrast.svg`
+- SolidWorks 预览贴花：`logo/rymovia-phase-halo-rear-v10.png`
+- 设计安全区：四边 `16 mm`；中央 `180 × 180 mm` VESA 接触留白；四个后脚各 `R12` 留白。
+- 几何保持：`548 × 420 mm`，主体 `1.5 mm 5052-H32`，中央 `160 × 160 mm` 局部叠层至约 `2.0 mm`，
+  VESA 100 四孔 `Ø4.5 mm` 坐标 `x/y=±50 mm` 均未改变。
+
+PNG 是为了在 SolidWorks 视口中清楚观察而适度增粗/提亮的预览稿；量产尺寸、线宽和对比度以 SVG
+及供应商工艺样片为准。激光蚀刻或丝印必须先做附着、耐磨和表面处理兼容性样片。
 
 请保留整个 `Rack4Modules` 文件夹；`.SLDASM` 依赖 `cad/parts` 中的原生零件，不能只复制
 一个总装文件。
