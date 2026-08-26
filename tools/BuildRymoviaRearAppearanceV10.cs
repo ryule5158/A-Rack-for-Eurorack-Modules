@@ -32,6 +32,49 @@ internal static class BuildRymoviaRearAppearanceV10
     private const double AssemblyMassToleranceKg = 0.003;
     private const int PreviewDecalMaskAlpha = 3;
 
+    // Keep the mechanical build guard tied to the same orbital-arc envelope
+    // used by the PNG/SVG generator.  Coordinates are local rear-panel mm;
+    // angle 0 is +X and positive rotation is counter-clockwise.
+    private sealed class ArtworkArcSpec
+    {
+        internal readonly double Rx;
+        internal readonly double Ry;
+        internal readonly double Start;
+        internal readonly double Sweep;
+        internal readonly double Width;
+
+        internal ArtworkArcSpec(double rx, double ry, double start,
+            double sweep, double width)
+        {
+            Rx = rx; Ry = ry; Start = start; Sweep = sweep; Width = width;
+        }
+    }
+
+    private static readonly ArtworkArcSpec[] ArtworkArcs =
+    {
+        new ArtworkArcSpec(142,124,20,45,0.65),
+        new ArtworkArcSpec(142,124,103,52,0.65),
+        new ArtworkArcSpec(142,124,174,31,0.56),
+        new ArtworkArcSpec(142,124,250,65,0.62),
+        new ArtworkArcSpec(162,141,43,48,0.58),
+        new ArtworkArcSpec(162,141,116,59,0.58),
+        new ArtworkArcSpec(162,141,208,33,0.50),
+        new ArtworkArcSpec(162,141,278,62,0.56),
+        new ArtworkArcSpec(182,158,18,39,0.52),
+        new ArtworkArcSpec(182,158,74,38,0.54),
+        new ArtworkArcSpec(182,158,133,59,0.54),
+        new ArtworkArcSpec(182,158,229,57,0.52),
+        new ArtworkArcSpec(202,175,28,39,0.46),
+        new ArtworkArcSpec(202,175,93,60,0.48),
+        new ArtworkArcSpec(202,175,178,43,0.42),
+        new ArtworkArcSpec(202,175,250,55,0.46),
+        new ArtworkArcSpec(222,190,9,36,0.40),
+        new ArtworkArcSpec(222,190,65,38,0.42),
+        new ArtworkArcSpec(222,190,123,46,0.42),
+        new ArtworkArcSpec(222,190,201,46,0.40),
+        new ArtworkArcSpec(222,190,280,56,0.42)
+    };
+
     private static readonly double[] Graphite = { 0.067, 0.067, 0.067 };
 
     private static readonly AssemblySpec[] Assemblies =
@@ -84,7 +127,7 @@ internal static class BuildRymoviaRearAppearanceV10
             OpenFinalShowcase(cad);
 
             cad.Log("V10_REAR_APPEARANCE_BUILD_COMPLETE=true");
-            cad.Log("V10_REAR_PATTERN=RYMOVIA_PHASE_HALO_STRUCTURAL_ECHO");
+            cad.Log("V10_REAR_PATTERN=RYMOVIA_PHASE_HALO_ORBITAL_ARCS");
             cad.Log("V10_REAR_PANEL_MM=548x420;skin=1.5;vesa_local_stack=2.0");
             cad.Log("V10_REAR_KEEPOUTS_MM=edge16;vesa180x180;feet4xR12");
             cad.Log("V10_REAR_SOURCE_HASHES_UNCHANGED=true");
@@ -181,19 +224,62 @@ internal static class BuildRymoviaRearAppearanceV10
 
     private static void ValidateArtworkKeepouts()
     {
-        // Artwork extrema are x +/-252 and y +/-190.
-        Require(CaseWidth / 2.0 - 252.0 >= 16.0, "Artwork violates the 16 mm side edge band");
-        Require(CaseHeight / 2.0 - 190.0 >= 20.0, "Artwork violates the top/bottom edge band");
+        double edgeX = CaseWidth / 2.0 - 16.0;
+        double edgeY = CaseHeight / 2.0 - 16.0;
+        double[] footX = { -245.0, 245.0 };
+        double[] footY = { -185.0, 185.0 };
 
-        // The closest halo shoulder to the VESA square is 120 mm in y or
-        // 138 mm in x; both remain outside x/y +/-90 mm.
-        Require(120.0 > 90.0 && 138.0 > 90.0,
-            "Phase halo intrudes into the 180 mm square VESA keep-out");
+        Require(ArtworkArcs.Length == 21,
+            "The V0.10 orbital artwork arc count changed unexpectedly");
+        foreach (ArtworkArcSpec arc in ArtworkArcs)
+        {
+            Require(arc.Rx > 0.0 && arc.Ry > 0.0 && arc.Width > 0.0,
+                "Orbital artwork has a non-positive radius or width");
+            Require(arc.Start >= -360.0 && arc.Start <= 360.0 &&
+                arc.Sweep > 0.0 && arc.Sweep <= 180.0,
+                "Orbital artwork angle range is invalid");
 
-        // Closest outer-halo point to each foot is approximately (27,7) mm.
-        double footClearance = Math.Sqrt(27.0 * 27.0 + 7.0 * 7.0) - 12.0;
-        Require(footClearance >= 15.0,
-            "Phase halo has insufficient clearance to a rear foot keep-out");
+            // Sample at <=0.5 degree, including the production stroke half-
+            // width. This checks the actual arcs rather than a hand-written
+            // bounding-box approximation.
+            int samples = Math.Max(2, (int)Math.Ceiling(arc.Sweep * 2.0));
+            for (int index = 0; index <= samples; index++)
+            {
+                double angle = (arc.Start + arc.Sweep * index / samples) *
+                    Math.PI / 180.0;
+                double x = arc.Rx * Math.Cos(angle);
+                double y = arc.Ry * Math.Sin(angle);
+                double halfWidth = arc.Width / 2.0;
+                Require(Math.Abs(x) + halfWidth <= edgeX + GeometryTolerance,
+                    "Orbital artwork violates the 16 mm side edge band");
+                Require(Math.Abs(y) + halfWidth <= edgeY + GeometryTolerance,
+                    "Orbital artwork violates the 16 mm top/bottom edge band");
+
+                double dx = Math.Max(Math.Abs(x) - 90.0, 0.0);
+                double dy = Math.Max(Math.Abs(y) - 90.0, 0.0);
+                double vesaDistance = Math.Sqrt(dx * dx + dy * dy);
+                Require(vesaDistance >= halfWidth + 0.5,
+                    "Orbital artwork intrudes into the 180 mm square VESA keep-out");
+
+                for (int footIndex = 0; footIndex < footX.Length; footIndex++)
+                    for (int rowIndex = 0; rowIndex < footY.Length; rowIndex++)
+                    {
+                        double footDx = x - footX[footIndex];
+                        double footDy = y - footY[rowIndex];
+                        double footDistance = Math.Sqrt(footDx * footDx + footDy * footDy);
+                        Require(footDistance >= 12.0 + halfWidth + 15.0,
+                            "Orbital artwork is too close to a rear-foot keep-out");
+                    }
+            }
+        }
+
+        // The four cardinal marks remain in the edge band but outside the
+        // central VESA and rear-foot zones.
+        Require(Math.Abs(-252.0) + 0.35 / 2.0 <= edgeX &&
+            Math.Abs(252.0) + 0.35 / 2.0 <= edgeX,
+            "Cardinal side registration marks violate the edge band");
+        Require(Math.Abs(190.0) + 0.35 / 2.0 <= edgeY,
+            "Cardinal top/bottom registration marks violate the edge band");
     }
 
     private static string CreateRearPanel(RackCadSession cad)
@@ -227,7 +313,7 @@ internal static class BuildRymoviaRearAppearanceV10
             cad.Property(document, "Mechanical geometry",
                 "Unchanged from V0.7: 548 x 420 x 1.5 mm 5052 skin; central 160 x 160 x 0.5 mm doubler; four diameter-4.5 VESA 100 holes");
             cad.Property(document, "Exterior identity",
-                "Rymovia Phase Halo / Structural Echo: three broken rounded paths correspond to the three 3U rows and echo the internal rear load frame");
+                "Rymovia Phase Halo: five nested circular and elliptical broken arcs with asymmetric solid and dotted segments orbit the central VESA keep-out");
             cad.Property(document, "Artwork keep-outs",
                 "16 mm perimeter; 180 x 180 mm central VESA contact zone; R12 around each of four feet at x +/-245 y +/-185");
             cad.Property(document, "Production artwork", VectorPath(cad));

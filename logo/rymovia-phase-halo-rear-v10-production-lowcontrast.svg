@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-274 -210 548 420" fill="none">
   <title>Rymovia Phase Halo rear-panel production intent V0.10</title>
-  <desc>Low-contrast one-colour production master. Supplier must preserve the declared structural keep-outs and qualify the finish on a process coupon.</desc>
-  <!-- Finished size: 548 x 420 mm.  Do not scale.  Preferred visual contrast:
-       12-18 percent on matte graphite.  A supplier coupon and adhesion/abrasion
-       test are required before production release. -->
-  <g id="phase-halo" transform="scale(1,-1)" stroke="#D8D8D8" stroke-linecap="round" stroke-linejoin="round">
-    <g id="row-a-inner" stroke-width="0.65" opacity="0.28">
-      <path d="M-30 120H-104 Q-138 120-138 86V28"/>
-      <path d="M22 120H104 Q138 120 138 86V42"/>
-      <path d="M138-18V-86 Q138-120 104-120H36"/>
-      <path d="M-20-120H-104 Q-138-120-138-86V-34"/>
-    </g>
-    <g id="row-b-middle" stroke-width="0.55" opacity="0.235">
-      <path d="M-58 150H-130 Q-176 150-176 104V48"/>
-      <path d="M38 150H130 Q176 150 176 104V28"/>
-      <path d="M176-46V-104 Q176-150 130-150H52"/>
-      <path d="M-40-150H-130 Q-176-150-176-104V-54"/>
-    </g>
-    <g id="row-c-outer" stroke-width="0.45" opacity="0.19">
-      <path d="M-92 178H-162 Q-218 178-218 122V70"/>
-      <path d="M74 178H162 Q218 178 218 122V64"/>
-      <path d="M218-68V-122 Q218-178 162-178H92"/>
-      <path d="M-76-178H-162 Q-218-178-218-122V-60"/>
-    </g>
-    <g id="structural-echo-calibration" stroke-width="0.35" opacity="0.16">
-      <path d="M-252 155H-228 M228 155H252 M-252-155H-228 M228-155H252"/>
-      <path d="M-115 184V190 M115 184V190 M-115-184V-190 M115-184V-190"/>
-      <path d="M-12 184V190 M0 182V190 M12 184V190 M-12-184V-190 M0-182V-190 M12-184V-190"/>
-      <path d="M-252-12H-246 M-252 0H-244 M-252 12H-246 M246-12H252 M244 0H252 M246 12H252"/>
+  <desc>Selected concept A: five concentric circular and elliptical orbital bands, split into asymmetric solid and dotted arcs. The 180 mm square VESA zone, four R12 foot zones and 16 mm edge band remain clear.</desc>
+  <!-- Finished size 548 x 420 mm; do not scale. Supplier must qualify low-energy laser marking or one-colour screen printing on a finish coupon. -->
+  <g id="phase-halo-orbital-arcs" transform="scale(1,-1)" stroke="#DCDAD3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M133.436 42.41 A142 124 0 0 1 60.012 112.382" stroke-width="0.65" opacity="0.277"/>
+    <path d="M-31.943 120.822 A142 124 0 0 1 -128.696 52.405" stroke-width="0.65" opacity="0.277"/>
+    <path d="M-141.222 12.962 A142 124 0 0 1 -128.696 -52.405" stroke-width="0.56" opacity="0.257" stroke-dasharray="0.01 3.1"/>
+    <path d="M-48.567 -116.522 A142 124 0 0 1 100.409 -87.681" stroke-width="0.62" opacity="0.275"/>
+    <path d="M118.479 96.162 A162 141 0 0 1 -2.827 140.979" stroke-width="0.58" opacity="0.255"/>
+    <path d="M-71.016 126.73 A162 141 0 0 1 -161.384 12.289" stroke-width="0.58" opacity="0.255"/>
+    <path d="M-143.038 -66.195 A162 141 0 0 1 -78.539 -123.321" stroke-width="0.5" opacity="0.237" stroke-dasharray="0.01 3.1"/>
+    <path d="M22.546 -139.628 A162 141 0 0 1 152.23 -48.225" stroke-width="0.56" opacity="0.25"/>
+    <path d="M173.092 48.825 A182 158 0 0 1 99.124 132.51" stroke-width="0.52" opacity="0.235" stroke-dasharray="0.01 3.1"/>
+    <path d="M50.166 151.879 A182 158 0 0 1 -68.178 146.495" stroke-width="0.54" opacity="0.25"/>
+    <path d="M-124.124 115.554 A182 158 0 0 1 -178.023 -32.85" stroke-width="0.54" opacity="0.25"/>
+    <path d="M-119.403 -119.244 A182 158 0 0 1 50.166 -151.879" stroke-width="0.52" opacity="0.24"/>
+    <path d="M178.355 82.158 A202 175 0 0 1 78.928 161.088" stroke-width="0.46" opacity="0.219"/>
+    <path d="M-10.572 174.76 A202 175 0 0 1 -179.983 79.448" stroke-width="0.48" opacity="0.235"/>
+    <path d="M-201.877 6.107 A202 175 0 0 1 -152.451 -114.81" stroke-width="0.42" opacity="0.209" stroke-dasharray="0.01 3.1"/>
+    <path d="M-69.088 -164.446 A202 175 0 0 1 115.862 -143.352" stroke-width="0.46" opacity="0.224"/>
+    <path d="M219.267 29.723 A222 190 0 0 1 156.978 134.35" stroke-width="0.4" opacity="0.194" stroke-dasharray="0.01 3.1"/>
+    <path d="M93.821 172.198 A222 190 0 0 1 -49.939 185.13" stroke-width="0.42" opacity="0.209"/>
+    <path d="M-120.91 159.347 A222 190 0 0 1 -217.921 36.254" stroke-width="0.42" opacity="0.209"/>
+    <path d="M-207.255 -68.09 A222 190 0 0 1 -86.742 -174.896" stroke-width="0.4" opacity="0.194" stroke-dasharray="0.01 3.1"/>
+    <path d="M38.55 -187.113 A222 190 0 0 1 202.807 -77.28" stroke-width="0.42" opacity="0.207"/>
+    <g id="cardinal-registration-marks" stroke-width="0.35" opacity="0.20">
+      <path d="M-252 0 L-244 0"/>
+      <path d="M244 0 L252 0"/>
+      <path d="M0 182 L0 190"/>
+      <path d="M0 -182 L0 -190"/>
     </g>
   </g>
   <g id="non-printing-keepouts" display="none" fill="none" stroke="#FF0000" stroke-width="0.2">
