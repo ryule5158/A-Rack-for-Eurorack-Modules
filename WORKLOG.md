@@ -886,3 +886,10 @@
 - `工作区边界`：发布提交后工作区没有新的 V11 staged/unknown 文件；仍仅保留此前明确存在的 `28` 个旧版 V03-V07 CAD 修改，未对这些文件执行恢复、删除、覆盖或暂存。
 - `SolidWorks 页面`：继续保持唯一可见且响应中的 SolidWorks 窗口为最终原生 `Rack4Modules_ExteriorIdentityShowcase_V11_MechanicalRelease.SLDASM`；后台依赖文档没有可见窗口。后续只做只读状态核验和本工作记录提交，不重新运行会使最终装配变脏的检查器。
 - `交付状态`：V11 机械发布候选已完成本地六态/STEP/文档/BOM 门禁并已推送；仍明确标记为 CAD release candidate，不把未做的样机、跌落、疲劳、紧固件拉脱、热/电气安全试验写成已通过。
+
+### 2026-08-29 20:49（Asia/Shanghai）— 远端与可见页面最终只读复核
+
+- `SHA 复核`：最终复核时 `HEAD=179bbe8240a69bf9bb9da0583de4ab7b91396359`，`origin/v11-mechanical-release` 同 SHA，`git ls-remote` 也返回同一值。
+- `边界复核`：`git status` 显示分支无 ahead/behind；`STAGED_COUNT=0`、`UNTRACKED_COUNT=0`、`MODIFIED_COUNT=28`。这 `28` 项正是先前受保护的旧版 CAD 修改，未纳入 V11 发布提交。
+- `界面复核`：仅 PID `37816` 具有非零窗口句柄，标题为最终原生 `Rack4Modules_ExteriorIdentityShowcase_V11_MechanicalRelease.SLDASM` 且 `Responding=True`；PID `36912` 没有窗口句柄，不计为可见页面。最终展示页和盖子分离观察状态保持不变。
+- `记录发布`：本条是最后一次工作记录补充；随后只对 `WORKLOG.md` 精确暂存、检查、提交并推送，不触碰 28 个旧 CAD 修改或任何已审查几何。提交后的 Git SHA 将在交付回报中再次列出。
