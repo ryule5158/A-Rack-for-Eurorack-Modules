@@ -1,129 +1,120 @@
-# Rack4Modules：3×104HP 原创 Eurorack 机箱
+# Rack4Modules：Rymovia 3×104HP 便携 Eurorack 机箱
 
-本项目当前设计入口为 **V0.10 Rymovia 外观 / 四点锁盖 / 背板相位回廊版**。它保持 3 排 3U、每排
-104HP、没有 1U 行，以及 `542 mm` 模块安装内净宽；在 V0.7 薄壁承力基线之上加入
-Rymovia Time Grid 外盖图案、背板 Phase Halo 图案、真实钻孔深盖、四点过中心锁扣安装结构、硬止挡与 EPDM 预压。
+当前设计入口是 **V11（V0.11）Mechanical Release Candidate**。它是一个可继续交给工程图、
+DFM 和实体样机阶段的完整 CAD 候选版，不是已经量产放行、通过商业认证或完成实体可靠性试验的产品。
 
-第一次打开项目，请先看 [V0.10 零基础打开与检查说明](START_HERE_V10.md)。V0.7 的结构与
-减重验证仍见 `docs/strength-weight-audit-v07.md` 和 `reports/layout-v07-validation.md`；
-V0.9 当前有成功生成记录，但尚未把实体样机试验或最终供应商锁扣 STEP 复核当作已完成。
+第一次打开项目，请从 [START_HERE_V11.md](START_HERE_V11.md) 开始。只想看最终外观时，在
+SOLIDWORKS 2025 中打开：
+
+`cad/assemblies/Rack4Modules_ExteriorIdentityShowcase_V11_MechanicalRelease.SLDASM`
+
+这个展示总装把拆下的 Phase Halo 背板展示副本、60°工作姿态机箱和拆下的盖子放在同一视图中。
+左侧额外背板及其加强片只是展示副本，不属于产品 BOM，也不能把该总装的质量当作整机质量。
+
+## 设计边界
+
+| 项目 | V11 当前定义 |
+| --- | --- |
+| 格式 | 3 排 × 3U × 104HP，共 312HP；无 1U |
+| 模块网格 | 每排可见宽度 528.32 mm；1HP = 5.08 mm |
+| 机身外廓 | 548 × 420 × 110 mm，不含拆装盖与外部凸出件 |
+| 模块安装 | 六根 542 mm 自制闭口结构导轨；每根配一条 528.32 mm AISI 304 M3 螺纹条 |
+| 桌面姿态 | 机箱模块面相对桌面约 60°，双后腿与双前防倾支撑形成四点支撑 |
+| 运输 | 82 mm 深回边盖、四点锁扣、EPDM 预压与独立金属硬止挡 |
+| 搬运 | 顶部单提手，两点 M4 安装并通过独立扩散件把载荷送入上边框 |
+| VESA | VESA 100 四孔，通过背板、独立加强片和一体式 6061 载荷框传至侧框 |
+| 顶部接口顺序 | 95 mm 适配器预留｜3×五针 DIN + USB-C 同排｜中央提手｜2×4 个 6.35 mm TRS |
+| 电源 | 只保留空间包络；电源拓扑、PCB、孔位、接地、保险及热设计均未冻结 |
 
 ## 当前总装入口
 
-| 用途 | SOLIDWORKS 总装 |
+| 用途 | SOLIDWORKS 原生总装 |
 | --- | --- |
-| 最终展示：背板相位回廊、60°工作姿态和拆下盖子同屏 | `cad/assemblies/Rack4Modules_ExteriorIdentityShowcase_V10_RymoviaPhaseHalo.SLDASM` |
-| 最终展示：60°工作姿态，盖子单独放在旁边 | `cad/assemblies/Rack4Modules_ShowcaseTilt60_LidOff_V10_RymoviaPhaseHaloRear.SLDASM` |
-| 正常开箱、主要编辑入口 | `cad/assemblies/Rack4Modules_OpenCase_V10_RymoviaPhaseHaloRear.SLDASM` |
-| 合盖运输状态 | `cad/assemblies/Rack4Modules_TransportClosed_V10_RymoviaPhaseHaloRear.SLDASM` |
-| 模块安装与内部避让检查 | `cad/assemblies/Rack4Modules_ClearanceCheck_V10_RymoviaPhaseHaloRear.SLDASM` |
-| 正式桌面支撑姿态，模块面相对桌面约 60° | `cad/assemblies/Rack4Modules_DesktopTilt60_V10_RymoviaPhaseHaloRear.SLDASM` |
+| 最终展示：背板、60°机箱和拆下盖子同屏 | `cad/assemblies/Rack4Modules_ExteriorIdentityShowcase_V11_MechanicalRelease.SLDASM` |
+| 产品展示：60°机箱与拆下盖子 | `cad/assemblies/Rack4Modules_ShowcaseTilt60_LidOff_V11_MechanicalRelease.SLDASM` |
+| 正常开箱与模块安装 | `cad/assemblies/Rack4Modules_OpenCase_V11_MechanicalRelease.SLDASM` |
+| 合盖运输状态 | `cad/assemblies/Rack4Modules_TransportClosed_V11_MechanicalRelease.SLDASM` |
+| 模块、电源母线和电源空间量规 | `cad/assemblies/Rack4Modules_ClearanceCheck_V11_MechanicalRelease.SLDASM` |
+| 正式 60°四点桌面支撑状态 | `cad/assemblies/Rack4Modules_DesktopTilt60_V11_MechanicalRelease.SLDASM` |
 
-建议只想看成品时打开 `Rack4Modules_ExteriorIdentityShowcase_V10_RymoviaPhaseHalo.SLDASM`。
-该展示总装把一个背板外表面展示副本放在左侧、完整 60°箱体放在中间、深盖放在右侧；副本只用于
-说明背板图案，不计入 BOM 或质量。盖子是否适合运输仍应在 `TransportClosed` 总装及实体样机中检查。
+请保留整个 `Rack4Modules` 文件夹；总装依赖 `cad/parts` 中的原生零件，不能只复制一个
+`.SLDASM` 文件。
 
-## V0.10 背板外观：Rymovia Phase Halo / Structural Echo
+## V11 机械改进摘要
 
-这次用户选定了概念板 A。背板不再只是一块无标识的黑板，而是用五层同心圆 / 椭圆断续弧形成
-与盖子 Time Grid 互补的“时间轴 / 反馈场”视觉系统：非对称实线和点线片段围绕中央 VESA 净区，
-盖子表达离散时间，背板表达相位回廊。图案不重复放大 Logo、不模拟 PCB、不使用霓虹或游戏化纹理；
-外围只保留与 A 一致的上、下、左、右四个短校准标记。
+### 模块导轨
 
-- 背板原生零件：`cad/parts/BackPanel_V10_5052_RymoviaPhaseHalo.SLDPRT`
-- 生产矢量母版：`logo/rymovia-phase-halo-rear-v10.svg`
-- 低反差量产意图：`logo/rymovia-phase-halo-rear-v10-production-lowcontrast.svg`
-- SolidWorks 预览贴花：`logo/rymovia-phase-halo-rear-v10.png`
-- 设计安全区：四边 `16 mm`；中央 `180 × 180 mm` VESA 接触留白；四个后脚各 `R12` 留白。
-- 几何保持：`548 × 420 mm`，主体 `1.5 mm 5052-H32`，中央 `160 × 160 mm` 局部叠层至约 `2.0 mm`，
-  VESA 100 四孔 `Ø4.5 mm` 坐标 `x/y=±50 mm` 均未改变。
+- 六根导轨是本项目的自制恒截面闭口结构，不再把一根过薄轨道或单颗端螺钉当作唯一承力路径。
+- 单根结构长度 542 mm、模块可见长度 528.32 mm、截面总高 10 mm、总深 22 mm；前部 12 mm
+  实体承载区与后部 10 mm 闭口脊组合，闭口壁厚 1.5 mm。
+- 每端使用一个 M3 定位连接和一个 M4 结构连接，两个轴线相距 8 mm；M4 连接进入可更换的
+  7075 端部嵌件，M3 进入导轨前部实体区。六轨共 12 个 M3、12 个 M4 端部连接。
+- 每根导轨带螺纹条的原生 CAD 质量为 0.249760 kg；含六根导轨、六条螺纹条、12 个端嵌件和
+  24 个端部螺钉的完整子系统为 1.556887 kg。它们是材料属性计算值，不是实物称重。
 
-PNG 是为了在 SolidWorks 视口中清楚观察而适度增粗/提亮的预览稿；量产尺寸、线宽和对比度以 SVG
-及供应商工艺样片为准。激光蚀刻或丝印必须先做附着、耐磨和表面处理兼容性样片。
+### 折叠支撑
 
-请保留整个 `Rack4Modules` 文件夹；`.SLDASM` 依赖 `cad/parts` 中的原生零件，不能只复制
-一个总装文件。
+- 后支撑为 262 mm、8 × 26 mm 的 7075-T6 实体臂，采用全尺寸 4 mm 外颊板、双剪切支撑、
+  带套筒主轴、独立硬止挡和位置锁定件。锁定件不承担正常工作止挡反力。
+- 前防倾连杆为 124 mm、8 × 20 mm 的 17-4PH H900 生产意图截面；CAD 使用 AISI 304 作为
+  密度代理。双剪切 U 形支架、保留式 8 mm 主轴/止挡、独立 M6 位置锁和 20 mm EPDM 脚垫
+  形成左右两个前支点。
+- 前连杆设置真实扫掠止挡槽、局部承力岛和圆角中段筋。生成器对单件 CAD 质量实施
+  0.1720–0.1745 kg 门禁，并以 257 个角度采样点检查止挡槽周围的名义材料余量；这些都是
+  几何/材料属性门禁，不是疲劳或冲击证明。
+- 60°原生空箱状态的 20 N、作用高度 200 mm 且纵向重心 ±30 mm 敏感性筛查得到后倾安全系数
+  2.415862、前倾安全系数 2.439637。这个计算不包含真实模块分布、桌面摩擦、制造变形或动态载荷。
 
-## V0.9 外观与锁盖摘要
+### 盖、VESA 与外观
 
-- 外盖采用 22 段、三组节奏带构成的 **Rymovia Time Grid**，对应三排 3U；不使用霓虹、
-  假 PCB 或重复满版 logo。评审 SVG 位于 `logo/rymovia-timegrid-v09.svg`，量产低反差意图稿
-  位于 `logo/rymovia-timegrid-v09-production-lowcontrast.svg`。
-- 左右侧各设置两个锁点，共四点；盖侧真实开 M3 孔，并加入 5052 加强板、箱侧 6061 桥板、
-  不锈钢扣座及贯穿紧固件模型。
-- 下锁点与脚架外颊板保留 `3 mm` 名义间隙，锁扣结构与最低散热孔保留 `58 mm` 名义间隙。
-- EPDM 名义压缩 `0.8 mm / 28.6%`，闭合位置由独立金属硬止挡控制。
-- 当前 CAD 质量为开箱 `5.267439 kg`、合盖 `6.737140 kg`，均不含未来电源与模块，也不是
-  实物称重。
-- 最终锁扣供应商 STEP、折弯/表面处理公差、预紧、循环、振动、跌落和满载提拉仍须样机验证。
+- 盖采用 1.2 mm 5052-H32 连续焊接/折弯生产意图结构，具有 82 mm 深回边、前连杆收纳避让、
+  四个 31 × 72 mm 锁扣包络、四组盖侧加强和金属限位的 EPDM 预压。
+- VESA 100 载荷路径为：外部 M4 → 1.5 mm 背板 → 0.5 mm 独立加强片 → 局部桥 → 一体式
+  6061 纵梁/横梁 → 四个侧框 M4 连接。CAD 几何不等于支架额定载荷或拉拔合格。
+- 盖面继续使用 Rymovia Time Grid，背板继续使用用户选定的 A 方案 Phase Halo。量产蚀刻、丝印、
+  阳极或粉末涂层必须先做颜色、附着、耐磨及清洁剂兼容性样片。
 
-## V0.7 结构基线摘要
+## 最终 CAD 与 STEP 复核快照
 
-- Eurorack 格式保持为 **3 × 104HP、无 1U**，模块安装内净宽保持 `542 mm`。
-- 六根模块导轨由全实体截面调整为闭口薄壁主体，并在两端保留实体连接块；模块螺纹条仍为
-  独立不锈钢承力件，导轨端部与侧框的连接路径没有用随机开孔削弱。
-- 后板主体改为 `1.5 mm` 5052 铝板，VESA 100 安装区域用局部叠层加强至约 `2.0 mm`，原有
-  VESA 桥接和纵横加强件保留。
-- 内侧框主体采用连续 `3 mm` 承力芯板，只在导轨端部、边缘、脚架轴/止挡、盖锁等局部形成
-  `4 mm` 加强区，避免用大面积等厚板承担局部载荷。
-- 深盖采用 `1.2 mm` 5052 薄壁深回边，并用成形加强筋等效件提高板面刚度；折腿让位区随
-  V0.7 脚跟结构更新。
-- 折腿仍为宽 `28 mm`、厚 `8 mm` 的 7075-T6 主体；Ø10 主轴、Ø10 实体止挡、4 mm 外承力
-  颊板、提手扩散件、VESA 加强路径及不锈钢螺纹条保持为冻结的关键结构，不通过开槽减重。
-- 脚架仍夹在内外侧板之间，主轴与止挡采用双剪切载荷路径；工作锁销不承担主要工作反力。
-- 展开 Ø8.2 锁孔位于 8×28 mm 主臂实体内；收纳锁孔位于与 Ø48 根部连成一体的 Ø20 加强
-  凸台内，同一 Ø8 固定弹簧锁销在两端状态均有真实金属孔壁。
+| 状态 | 顶层组件 | 原生 CAD 质量 | 实体干涉 |
+| --- | ---: | ---: | ---: |
+| OpenCase | 74 | 6.20306772555 kg | 0 |
+| TransportClosed | 80 | 7.85012405063 kg | 0 |
+| ClearanceCheck | 82 | 21.95348932555 kg | 仅 2 个预期量规交叠 |
+| DesktopTilt60 | 74 | 6.20306772555 kg | 0 |
+| ShowcaseTilt60_LidOff | 80 | 7.85012405063 kg | 0 |
+| ExteriorIdentityShowcase | 82 | 8.80830729677 kg | 0 |
 
-当前原生 CAD 质量为：开箱裸机 **5.213 kg**，合盖运输态 **6.534 kg**（均不含未来尚未
-确定的电源和模块）。这比上一轮 V0.7 中间模型 `5.924 / 7.614 kg` 分别降低
-`0.711 / 1.080 kg`，即约 `12.0% / 14.2%`，但它仍不是实物称重，也不能仅凭质量属性
-宣称达到某个商业产品的可靠性或便携等级。
+`ClearanceCheck` 的高质量包含模块、电源和母线实体量规；两个预期交叠分别为模块包络与
+`210 × 90 × 45 mm` 电源空间的 472500 mm³，以及模块包络与 `500 × 85 × 20 mm` 母线空间的
+420900 mm³。它们不是产品零件干涉。`ExteriorIdentityShowcase` 含额外背板展示副本，不能用于
+产品称重。
 
-## 60°稳定支撑边界
+六个对应 STEP 均使用 SOLIDWORKS `LoadFile4` 重新读入，`errors=0`、`warnings=0`，顶层组件数依次为
+74 / 80 / 82 / 74 / 80 / 82；干涉结果与原生状态一致。STEP 读回通常没有可直接比较的材料密度，
+因此这里不使用 STEP 质量来证明原生材料属性正确。
 
-V0.7 保留双剪切夹层、宽折腿和独立实体止挡，并把脚跟承压区移到直臂扫掠之外。止挡中心
-与脚跟在正式 60°姿态接触；继续展开方向由实体止挡承载，锁销只负责防止意外反折和收纳
-定位。当前连续二维名义扫掠和离散三维干涉由 V0.7 验证器检查，但它们不能覆盖制造公差、
-磨损、桌面摩擦和受力变形。
+完整的结果和限制见 [V11 机械验证报告](reports/v11-mechanical-validation.md)，制造交接见
+[制造说明](docs/manufacturing.md)。
 
-在样机完成前，以下结论都不能从 CAD 自动推出：额定载荷、抗跌落等级、疲劳寿命、运输
-可靠性、脚垫防滑能力、商业产品同等级认证或“绝对不会损坏”。投产前至少需要满载/偏载
-重心测量、最不利方向操作力试验、单腿偏载与侧载、1.5 倍静载保持、折叠循环、公差链、
-紧固件防松、运输振动和跌落后复检。
+## 放行边界
 
-## 商业产品参考与原创边界
+V11 当前可以作为以下工作的输入：原生 CAD 评审、STEP 交换验证、工程图/公差设计、供应商 DFM、
+首件报价和实体样机计划。它不能单独证明承重、寿命、跌落、振动、摩擦、温升或商业可靠性。
 
-本轮只借鉴商业机箱常见的工程策略：连续铝合金承力框、薄壁深回边板件、局部加厚、轻量
-盖和把载荷导入端部连接区。参考入口包括：
+在任何生产放行前，至少仍需完成：实体首件与三排真实模块装配、材料证书、关键尺寸检测、紧固件
+扭矩与防松、导轨 M3/M4 拉拔、后腿与前连杆静载/偏载/疲劳、运输冲击/跌落/振动、四锁循环、
+提手满载、VESA 拉拔与循环弯曲、脚垫摩擦及最终电源/模块组合的温升测试。
 
-- [Intellijel 7U Performance Case Gen-2](https://intellijel.com/shop/cases/7u/7u-performance-case-gen-2/)：
-  铝框、深盖、内藏腿和 VESA 100 的功能组织；
-- [Befaco 7U Case](https://www.befaco.org/befaco_7u_case/)：一体式阳极氧化铝机身与轻质盖；
-- [Erica Synths Carbon Fiber Travel Case 2](https://www.ericasynths.lv/news/post/carbon-fiber-travel-case-2)：
-  碳纤维旅行箱作为更激进的材料减重路线；
-- [Sector Sieben Berliner Skiff](https://sectorsieben.com/berliner-skiff-case.html)：
-  铝镁合金 9U / 104HP 机箱的轻量材料路线。
+## 历史版本
 
-公开产品页不能证明这些产品与本项目采用相同内部结构、材料状态、紧固件或载荷指标。
-V0.7 的三排布局、局部加强、导轨端块、脚跟/止挡几何和验证条件均为本项目自己的工程选择，
-不应描述成对任何产品内部结构的精确复制。
+V11 是独立派生的当前入口；旧版文件保留用于追溯，不应覆盖或删除：
 
-## 历史版本与验证边界
+- [V10 外观版零基础说明](START_HERE_V10.md)
+- `docs/strength-weight-audit-v07.md`
+- `reports/layout-v07-validation.md`
+- `START_HERE_V06.md`
+- `docs/stability-v06.md`
+- `reports/layout-v06-validation.md`
 
-V0.6 是上一版稳定支撑方案，继续完整保留，不再作为当前入口：
-
-- [V0.6 零基础说明](START_HERE_V06.md)
-- [V0.6 折叠脚架稳定性说明](docs/stability-v06.md)
-- [`reports/layout-v06-validation.md`](reports/layout-v06-validation.md)：
-  `579 PASS / 13 WARNING / 0 FAIL` 的历史软件验证结果
-
-V0.5 是 `524 PASS / 15 WARNING / 0 FAIL` 的更早双剪切 CAD 基线；V0.4 及更早版本也只用于
-历史追溯。上述零 FAIL 仅证明各自报告覆盖的文件、引用和离散 CAD 条件，不代表连续运动、
-强度认证或实体试验通过。
-
-`*_V07` 原生零件、五个 V0.7 总装、说明和最终验证报告共同构成当前版本；`*_V06`、
-`*_V05`、`*_V04` 及其文档均应保留在 Git 历史中，不要覆盖或删除。
-
-V0.7 的 **14 个 WARNING** 包括 SOLIDWORKS NeedsRegen 打开位、两个有意保留的模块/电源
-空间包络交叠，以及质量实测、重心、摩擦、规定载荷、疲劳、公差、供应商件和连续三维运动
-等实物边界；零 FAIL 不等于实体强度或商业级认证。
+历史报告中的 PASS/FAIL 只对应其版本和覆盖条件，不能替代 V11 当前证据或实体试验。

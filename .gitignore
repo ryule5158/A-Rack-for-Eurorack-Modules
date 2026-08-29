@@ -11,3 +11,4 @@ artifacts/preview/*.png
 tools/build/
 tools/build_v09/
 tools/build_v10/
+tools/build_v11/
