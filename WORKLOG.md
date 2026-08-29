@@ -879,3 +879,10 @@
 - `修正范围`：主代理只移除上述四处行尾空格，正文语义、CAD、STEP、BOM、验证数据和其他文件内容均未改变；没有执行批量换行转换。
 - `最终暂存要求`：由于本条继续更新 `WORKLOG.md`，提交前须再次仅精确暂存 `WORKLOG.md` 与 `reports/v11-mechanical-validation.md`，不得使用 `git add .`。
 - `最终门禁`：重新暂存后必须要求 `git diff --cached --check` 退出码为 `0`，并再次确认 staged 项仍为 `113`、允许路径之外为 `0`、旧 V03-V10 CAD staged 为 `0`、构建产物 staged 为 `0`；全部满足后才可提交和推送。
+
+### 2026-08-29 20:48（Asia/Shanghai）— 首次远端发布后的收尾核验
+
+- `远端一致性`：当前分支 `v11-mechanical-release` 的本地 `HEAD` 与 `origin/v11-mechanical-release` 均为 `482fb3342970aab3de8ad1559226fb985f016265`；分支上游已建立，远端分支查询返回相同 SHA，发布入口为 `https://github.com/ryule5158/A-Rack-for-Eurorack-Modules/pull/new/v11-mechanical-release`。
+- `工作区边界`：发布提交后工作区没有新的 V11 staged/unknown 文件；仍仅保留此前明确存在的 `28` 个旧版 V03-V07 CAD 修改，未对这些文件执行恢复、删除、覆盖或暂存。
+- `SolidWorks 页面`：继续保持唯一可见且响应中的 SolidWorks 窗口为最终原生 `Rack4Modules_ExteriorIdentityShowcase_V11_MechanicalRelease.SLDASM`；后台依赖文档没有可见窗口。后续只做只读状态核验和本工作记录提交，不重新运行会使最终装配变脏的检查器。
+- `交付状态`：V11 机械发布候选已完成本地六态/STEP/文档/BOM 门禁并已推送；仍明确标记为 CAD release candidate，不把未做的样机、跌落、疲劳、紧固件拉脱、热/电气安全试验写成已通过。
